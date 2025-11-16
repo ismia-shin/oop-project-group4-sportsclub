@@ -1,7 +1,13 @@
 package com.group4.sportsclub.Common;
 
+import com.group4.sportsclub.Samiha.Member.Member;
+import com.group4.sportsclub.Samiha.Physician.Physician;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TextField;
+
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 
 public class DataLoaderController
 {
@@ -17,12 +23,26 @@ public class DataLoaderController
     @javafx.fxml.FXML
     public void initialize() {
     }
+    ArrayList<Member> memberList = new ArrayList<>();
 
     @javafx.fxml.FXML
-    public void saveData(ActionEvent actionEvent) {
+    public void loadData(ActionEvent actionEvent){
+
+
+
     }
 
     @javafx.fxml.FXML
-    public void loadData(ActionEvent actionEvent) {
+    public void saveData(ActionEvent actionEvent) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("data/Samiha/User/memberList.dat"))) {
+
+            oos.writeObject(new ArrayList<>(memberList));
+
+            System.out.println("Data saved successfully");
+
+        } catch (Exception e) {
+            System.err.println("Error saving data: " + e.getMessage());
+
+        }
     }
 }

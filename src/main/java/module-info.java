@@ -1,9 +1,12 @@
 module com.group4.sportsclub {
     requires javafx.controls;
     requires javafx.fxml;
+    requires javafx.graphics;
 
     opens com.group4.sportsclub.Samiha.FinancialOfficer to javafx.fxml;
     opens com.group4.sportsclub.Samiha.Physician to javafx.fxml;
+    opens com.group4.sportsclub.Samiha.Member to javafx.fxml;
+    opens com.group4.sportsclub.Samiha.Other to javafx.fxml;
 
     opens com.group4.sportsclub.Abid.MembershipHolder to javafx.fxml;
     opens com.group4.sportsclub.Abid.OperationsManager to javafx.fxml;
