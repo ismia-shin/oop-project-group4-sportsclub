@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="450.0" prefWidth="993.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group4.sportsclub.Samiha.FinancialOfficer.FinancialDashboardController">
+    <Label fx:id="titleFinancialOfficer" layoutX="97.0" layoutY="25.0" prefHeight="46.0" prefWidth="218.0" text="Accountant Name">
+        <font>
+          <Font size="14.0" />
+        </font>
+    </Label>
+    <Line endX="900.0" layoutX="114.0" layoutY="84.0" startX="-123.0" />
+    <Text layoutX="355.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Financial Officer Dashboard">
+        <font>
+          <Font size="25.0" />
+        </font>
+    </Text>
+    <Button layoutX="900.0" layoutY="33.0" mnemonicParsing="false" text="Log out">
+        <font>
+          <Font size="16.0" />
+        </font>
+    </Button>
+    <ImageView fitHeight="58.0" fitWidth="39.0" layoutX="29.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../../Images/Brother's_Union_Logo_noBG_noText.png" />
+    </ImageView>
+    <Button layoutX="31.0" layoutY="117.0" mnemonicParsing="false" onAction="#SwitchToFee" prefHeight="133.0" prefWidth="218.0" text="💳" textAlignment="CENTER" wrapText="true">
+        <font>
+          <Font size="55.0" />
+        </font>
+        <textFill>
+          <LinearGradient>
+              <stops>
+                  <Stop>
+                      <color>
+                          <Color red="1.0" green="0.20952381193637848" />
+                      </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                      <color>
+                          <Color red="0.20000000298023224" green="1.0" />
+                      </color>
+                  </Stop>
+              </stops>
+          </LinearGradient>
+        </textFill>
+    </Button>
+    <Button layoutX="271.0" layoutY="117.0" mnemonicParsing="false" onAction="#SwitchToRefund" prefHeight="133.0" prefWidth="218.0" text="📨">
+        <font>
+          <Font size="55.0" />
+        </font>
+        <textFill>
+          <LinearGradient>
+              <stops>
+                  <Stop>
+                      <color>
+                          <Color red="1.0" />
+                      </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                      <color>
+                          <Color red="0.8799999952316284" green="0.7550400495529175" blue="0.25519999861717224" />
+                      </color>
+                  </Stop>
+              </stops>
+          </LinearGradient>
+        </textFill>
+    </Button>
+    <Button layoutX="511.0" layoutY="117.0" mnemonicParsing="false" onAction="#SwitchToHistory" prefHeight="133.0" prefWidth="218.0" text="🔎 ">
+        <font>
+          <Font size="55.0" />
+        </font>
+        <textFill>
+          <LinearGradient>
+              <stops>
+                  <Stop>
+                      <color>
+                          <Color red="0.8815789222717285" green="0.41065526008605957" blue="0.22447611391544342" />
+                      </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                      <color>
+                          <Color red="0.24300000071525574" green="0.2445642650127411" blue="0.8999999761581421" />
+                      </color>
+                  </Stop>
+              </stops>
+          </LinearGradient>
+        </textFill>
+    </Button>
+    <Button layoutX="756.0" layoutY="117.0" mnemonicParsing="false" onAction="#SwitchToEventBudget" prefHeight="133.0" prefWidth="218.0" text="🎊">
+        <font>
+          <Font size="55.0" />
+        </font>
+        <textFill>
+          <LinearGradient>
+              <stops>
+                  <Stop>
+                      <color>
+                          <Color red="0.8815789222717285" green="0.41065526008605957" blue="0.22447611391544342" />
+                      </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                      <color>
+                          <Color red="0.2395833283662796" green="0.9078947305679321" blue="0.42893823981285095" />
+                      </color>
+                  </Stop>
+              </stops>
+          </LinearGradient>
+        </textFill>
+    </Button>
+    <Button layoutX="31.0" layoutY="284.0" mnemonicParsing="false" onAction="#SwitchToDepartmentBudget" prefHeight="133.0" prefWidth="218.0" text="📜">
+        <font>
+          <Font size="55.0" />
+        </font>
+        <textFill>
+          <LinearGradient>
+              <stops>
+                  <Stop>
+                      <color>
+                          <Color red="0.7236841917037964" green="0.29818469285964966" blue="0.6456759572029114" />
+                      </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                      <color>
+                          <Color red="0.30092594027519226" green="0.9067901372909546" blue="1.0" />
+                      </color>
+                  </Stop>
+              </stops>
+          </LinearGradient>
+        </textFill>
+    </Button>
+    <Button layoutX="271.0" layoutY="284.0" mnemonicParsing="false" onAction="#SwitchToPayroll" prefHeight="133.0" prefWidth="218.0" text="\$">
+        <font>
+          <Font size="55.0" />
+        </font>
+        <textFill>
+          <LinearGradient>
+              <stops>
+                  <Stop>
+                      <color>
+                          <Color red="0.8500000238418579" green="0.5692976117134094" blue="0.042500000447034836" />
+                      </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                      <color>
+                          <Color red="0.18585526943206787" green="0.4736842215061188" blue="0.0899122804403305" />
+                      </color>
+                  </Stop>
+              </stops>
+          </LinearGradient>
+        </textFill>
+    </Button>
+    <Button layoutX="511.0" layoutY="284.0" mnemonicParsing="false" onAction="#SwitchToAsset" prefHeight="133.0" prefWidth="218.0" text="📦">
+        <font>
+          <Font size="55.0" />
+        </font>
+        <textFill>
+          <LinearGradient>
+              <stops>
+                  <Stop>
+                      <color>
+                          <Color red="0.8421052694320679" green="0.8175438642501831" blue="0.7719298005104065" />
+                      </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                      <color>
+                          <Color red="0.10782163590192795" green="0.5757675170898438" blue="0.7763158082962036" />
+                      </color>
+                  </Stop>
+              </stops>
+          </LinearGradient>
+        </textFill>
+    </Button>
+    <Button layoutX="756.0" layoutY="284.0" mnemonicParsing="false" onAction="#SwitchToNotification" prefHeight="133.0" prefWidth="218.0" text="🔔">
+        <font>
+          <Font size="55.0" />
+        </font>
+        <textFill>
+          <LinearGradient>
+              <stops>
+                  <Stop>
+                      <color>
+                          <Color red="0.5925714373588562" blue="0.6100000143051147" />
+                      </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                      <color>
+                          <Color red="0.9428571462631226" green="1.0" />
+                      </color>
+                  </Stop>
+              </stops>
+          </LinearGradient>
+        </textFill>
+    </Button>
+    <Text layoutX="109.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Payment" textAlignment="CENTER">
+        <font>
+          <Font name="Georgia" size="15.0" />
+        </font>
+    </Text>
+    <Text layoutX="360.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Refund " textAlignment="CENTER">
+        <font>
+          <Font name="Georgia" size="15.0" />
+        </font>
+    </Text>
+    <Text layoutX="596.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="History" textAlignment="CENTER">
+        <font>
+          <Font name="Georgia" size="15.0" />
+        </font>
+    </Text>
+    <Text layoutX="821.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event Budget" textAlignment="CENTER">
+        <font>
+          <Font name="Georgia" size="15.0" />
+        </font>
+    </Text>
+    <Text layoutX="74.0" layoutY="399.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Department Budget" textAlignment="CENTER">
+        <font>
+          <Font name="Georgia" size="15.0" />
+        </font>
+    </Text>
+    <Text layoutX="358.0" layoutY="399.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payroll" textAlignment="CENTER">
+        <font>
+          <Font name="Georgia" size="15.0" />
+        </font>
+    </Text>
+    <Text layoutX="600.0" layoutY="399.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Asset " textAlignment="CENTER">
+        <font>
+          <Font name="Georgia" size="15.0" />
+        </font>
+    </Text>
+    <Text layoutX="826.0" layoutY="399.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notification" textAlignment="CENTER">
+        <font>
+          <Font name="Georgia" size="15.0" />
+        </font>
+    </Text>
+</AnchorPane>

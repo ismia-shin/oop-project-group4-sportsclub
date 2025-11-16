@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="583.0" prefWidth="1189.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group4.sportsclub.Samiha.Physician.TestRequestController">
+    <VBox layoutX="38.0" layoutY="99.0" prefHeight="463.0" prefWidth="164.0" spacing="20.0">
+        <Button mnemonicParsing="false" onAction="#SwitchToDashboard" prefHeight="51.0" prefWidth="164.0" text="🏠 Dashboard">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#SwitchToPrescription" prefHeight="51.0" prefWidth="164.0" text=" 💊 Prescribe">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#SwitchToDietPlan" prefHeight="51.0" prefWidth="164.0" text="🍎 Plan Diet">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#SwitchToHistory" prefHeight="51.0" prefWidth="164.0" text="🔎 View History">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#SwitchToTestRequest" prefHeight="51.0" prefWidth="164.0" text="💉 Test Request">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+    </VBox>
+    <Line endX="1096.5" layoutX="104.0" layoutY="74.0" startX="-104.0" />
+    <Text layoutX="576.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Test Form">
+        <font>
+          <Font size="25.0" />
+        </font>
+    </Text>
+    <Button layoutX="1090.0" layoutY="23.0" mnemonicParsing="false" text="Log out">
+        <font>
+          <Font size="16.0" />
+        </font>
+    </Button>
+    <Button layoutX="1020.0" layoutY="23.0" mnemonicParsing="false" onAction="#SwitchToNotification" text="🔔">
+        <font>
+          <Font size="17.0" />
+        </font>
+    </Button>
+    <ImageView fitHeight="58.0" fitWidth="39.0" layoutX="19.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../../Images/Brother's_Union_Logo_noBG_noText.png" />
+    </ImageView>
+    <Text layoutX="281.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Basic Information">
+        <font>
+          <Font name="System Bold" size="16.0" />
+        </font>
+    </Text>
+    <Text layoutX="272.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID">
+        <font>
+          <Font size="16.0" />
+        </font>
+    </Text>
+    <TextField layoutX="307.0" layoutY="105.0" prefHeight="25.0" prefWidth="154.0" />
+    <Label layoutX="281.0" layoutY="232.0" prefHeight="25.0" prefWidth="170.0" text="Name" wrapText="true">
+        <font>
+          <Font size="15.0" />
+        </font>
+    </Label>
+    <Label layoutX="281.0" layoutY="267.0" prefHeight="25.0" prefWidth="93.0" text="Blood Group" wrapText="true">
+        <font>
+          <Font size="15.0" />
+        </font>
+    </Label>
+    <Label layoutX="279.0" layoutY="301.0" prefHeight="25.0" prefWidth="230.0" text="Allergies" wrapText="true">
+        <font>
+          <Font size="15.0" />
+        </font>
+    </Label>
+    <Line endX="197.5" layoutX="356.0" layoutY="225.0" startX="-81.5" />
+    <Line endX="-97.0" endY="116.0" layoutX="371.0" layoutY="220.0" startX="-97.0" startY="-27.0" />
+    <Button layoutX="742.0" layoutY="105.0" mnemonicParsing="false" text="Search" />
+    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="272.0" layoutY="358.0" prefHeight="25.0" prefWidth="280.0" text="Message" textAlignment="CENTER" wrapText="true" />
+    <Text layoutX="492.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+        <font>
+          <Font size="16.0" />
+        </font>
+    </Text>
+    <DatePicker layoutX="540.0" layoutY="105.0" prefHeight="25.0" prefWidth="176.0" />
+    <Text layoutX="593.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hematology">
+        <font>
+          <Font name="System Bold" size="16.0" />
+        </font>
+    </Text>
+    <Line endX="68.5" layoutX="668.0" layoutY="195.0" startX="-81.5" />
+    <Line endX="-97.0" endY="52.0" layoutX="683.0" layoutY="194.0" startX="-97.0" startY="-27.0" />
+    <Text layoutX="594.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clinical Chemistry">
+        <font>
+          <Font name="System Bold" size="16.0" />
+        </font>
+    </Text>
+    <Line endX="75.5" layoutX="669.0" layoutY="300.0" startX="-81.5" />
+    <Line endX="-97.0" endY="58.0" layoutX="684.0" layoutY="299.0" startX="-97.0" startY="-27.0" />
+    <Text layoutX="822.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Uranalysis">
+        <font>
+          <Font name="System Bold" size="16.0" />
+        </font>
+    </Text>
+    <Line endX="75.5" layoutX="897.0" layoutY="190.0" startX="-81.5" />
+    <Line endX="-97.0" endY="40.0" layoutX="912.0" layoutY="189.0" startX="-97.0" startY="-27.0" />
+    <Text layoutX="822.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Serology">
+        <font>
+          <Font name="System Bold" size="16.0" />
+        </font>
+    </Text>
+    <Line endX="75.5" layoutX="897.0" layoutY="266.0" startX="-81.5" />
+    <Line endX="-97.0" endY="83.0" layoutX="912.0" layoutY="265.0" startX="-97.0" startY="-27.0" />
+    <Text layoutX="1028.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imaging">
+        <font>
+          <Font name="System Bold" size="16.0" />
+        </font>
+    </Text>
+    <Line endX="75.5" layoutX="1103.0" layoutY="182.0" startX="-81.5" />
+    <Line endX="-97.0" endY="170.0" layoutX="1118.0" layoutY="181.0" startX="-97.0" startY="-27.0" />
+    <Text layoutX="591.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Endoscopy">
+        <font>
+          <Font name="System Bold" size="16.0" />
+        </font>
+    </Text>
+    <Line endX="75.5" layoutX="666.0" layoutY="398.0" startX="-81.5" />
+    <Line endX="-97.0" endY="67.0" layoutX="681.0" layoutY="398.0" startX="-97.0" startY="-27.0" />
+    <Text layoutX="591.0" layoutY="487.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Physiological">
+        <font>
+          <Font name="System Bold" size="16.0" />
+        </font>
+    </Text>
+    <Line endX="75.5" layoutX="666.0" layoutY="501.0" startX="-81.5" />
+    <Line endX="-97.0" endY="65.0" layoutX="681.0" layoutY="500.0" startX="-97.0" startY="-27.0" />
+    <Text layoutX="822.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Performance Assessment">
+        <font>
+          <Font name="System Bold" size="16.0" />
+        </font>
+    </Text>
+    <Line endX="106.5" layoutX="897.0" layoutY="394.0" startX="-81.5" />
+    <Line endX="-97.0" endY="174.0" layoutX="912.0" layoutY="393.0" startX="-97.0" startY="-27.0" />
+    <Text layoutX="1027.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anti Doping Test">
+        <font>
+          <Font name="System Bold" size="16.0" />
+        </font>
+    </Text>
+    <Line endX="61.5" layoutX="1102.0" layoutY="399.0" startX="-81.5" />
+    <Line endX="-97.0" endY="162.0" layoutX="1117.0" layoutY="398.0" startX="-97.0" startY="-27.0" />
+    <Text layoutX="272.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medical Statement">
+        <font>
+          <Font name="System Bold" size="16.0" />
+        </font>
+    </Text>
+    <TextField layoutX="272.0" layoutY="429.0" prefHeight="103.0" prefWidth="280.0" />
+    <Button layoutX="309.0" layoutY="539.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="211.0" text="Generate &amp; Send Test" textAlignment="CENTER" />
+    <CheckBox layoutX="595.0" layoutY="198.0" mnemonicParsing="false" text="CBC">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="596.0" layoutY="223.0" mnemonicParsing="false" text="PT/INR">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="594.0" layoutY="304.0" mnemonicParsing="false" text="CMP">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="595.0" layoutY="332.0" mnemonicParsing="false" text="Lipid Panel">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="666.0" layoutY="304.0" mnemonicParsing="false" text="HbA1c">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="828.0" layoutY="197.0" mnemonicParsing="false" text="UA">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="823.0" layoutY="297.0" mnemonicParsing="false" text="Culture/ Sensitivity">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="825.0" layoutY="515.0" mnemonicParsing="false" text="Push-Up/Plank Test">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="825.0" layoutY="271.0" mnemonicParsing="false" text="Antigen">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="1038.0" layoutY="189.0" mnemonicParsing="false" text="X-ray">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="1038.0" layoutY="220.0" mnemonicParsing="false" text="CT scan">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="1038.0" layoutY="248.0" mnemonicParsing="false" text="MRI scan">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="1040.0" layoutY="281.0" mnemonicParsing="false" text="Ultrasound">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="1038.0" layoutY="307.0" mnemonicParsing="false" text="PET scan">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="1038.0" layoutY="334.0" mnemonicParsing="false" text="DEXA">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="595.0" layoutY="407.0" mnemonicParsing="false" text="Colonoscopy">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="595.0" layoutY="436.0" mnemonicParsing="false" text="EGD">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="652.0" layoutY="436.0" mnemonicParsing="false" text="Bronchoscopy">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="593.0" layoutY="510.0" mnemonicParsing="false" text="ECG">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="662.0" layoutY="510.0" mnemonicParsing="false" text="EEG">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="593.0" layoutY="542.0" mnemonicParsing="false" text="Echocardiogram">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="825.0" layoutY="402.0" mnemonicParsing="false" text="Vertical Jum Test">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="825.0" layoutY="431.0" mnemonicParsing="false" text="40-Yard Sprint">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="825.0" layoutY="458.0" mnemonicParsing="false" text="5-10-5 Shuttle Run">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="825.0" layoutY="487.0" mnemonicParsing="false" text="Beep Test">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="825.0" layoutY="324.0" mnemonicParsing="false" text="Antibody">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="825.0" layoutY="546.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="164.0" text="Cooper 12-Minute Run">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="1031.0" layoutY="409.0" mnemonicParsing="false" text="Anabolic Agents">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="1031.0" layoutY="436.0" mnemonicParsing="false" text="Peptide Hormones">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="1031.0" layoutY="463.0" mnemonicParsing="false" text="Growth Factors">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="1031.0" layoutY="491.0" mnemonicParsing="false" text="Mimetic">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="1031.0" layoutY="515.0" mnemonicParsing="false" text="Stimulants">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+    <CheckBox layoutX="1031.0" layoutY="546.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="137.0" text="Diuretics ">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </CheckBox>
+   <Label fx:id="titlePhysician" layoutX="77.0" layoutY="14.0" prefHeight="51.0" prefWidth="289.0" text="Doctor's Name and Designation">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Label>
+</AnchorPane>

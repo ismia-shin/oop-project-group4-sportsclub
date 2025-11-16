@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="669.0" prefWidth="1316.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group4.sportsclub.Samiha.Physician.PhysicianHistoryController">
+    <VBox layoutX="27.0" layoutY="97.0" prefHeight="416.0" prefWidth="164.0" spacing="20.0">
+        <Button mnemonicParsing="false" onAction="#SwitchToDashboard" prefHeight="51.0" prefWidth="164.0" text="🏠 Dashboard">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#SwitchToPrescription" prefHeight="51.0" prefWidth="164.0" text=" 💊 Prescribe">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#SwitchToDietPlan" prefHeight="51.0" prefWidth="164.0" text="🍎 Plan Diet">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#SwitchToHistory" prefHeight="51.0" prefWidth="164.0" text="🔎 View History">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#SwitchToTestRequest" prefHeight="51.0" prefWidth="164.0" text="💉 Test Request">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+    </VBox>
+    <Line endX="1221.5" layoutX="104.0" layoutY="74.0" startX="-104.0" />
+    <Text layoutX="570.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View History">
+        <font>
+          <Font size="25.0" />
+        </font>
+    </Text>
+    <Button layoutX="1211.0" layoutY="29.0" mnemonicParsing="false" text="Log out">
+        <font>
+          <Font size="16.0" />
+        </font>
+    </Button>
+    <Button layoutX="1148.0" layoutY="28.0" mnemonicParsing="false" onAction="#SwitchToNotification" text="🔔">
+        <font>
+          <Font size="17.0" />
+        </font>
+    </Button>
+    <ImageView fitHeight="58.0" fitWidth="39.0" layoutX="19.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../../Images/Brother's_Union_Logo_noBG_noText.png" />
+    </ImageView>
+    <Text layoutX="227.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Basic Information">
+        <font>
+          <Font name="System Bold" size="16.0" />
+        </font>
+    </Text>
+    <Text layoutX="219.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID">
+        <font>
+          <Font size="16.0" />
+        </font>
+    </Text>
+    <TextField layoutX="254.0" layoutY="96.0" prefHeight="25.0" prefWidth="154.0" />
+    <Label layoutX="227.0" layoutY="182.0" prefHeight="33.0" prefWidth="249.0" text="Name" wrapText="true">
+        <font>
+          <Font size="15.0" />
+        </font>
+    </Label>
+    <Label layoutX="615.0" layoutY="182.0" prefHeight="33.0" prefWidth="146.0" text="Blood Group" wrapText="true">
+        <font>
+          <Font size="15.0" />
+        </font>
+    </Label>
+    <Label layoutX="877.0" layoutY="182.0" prefHeight="33.0" prefWidth="397.0" text="Allergies" wrapText="true">
+        <font>
+          <Font size="15.0" />
+        </font>
+    </Label>
+    <Line endX="981.5" layoutX="302.0" layoutY="175.0" startX="-81.5" />
+    <Line endX="-97.0" endY="55.0" layoutX="317.0" layoutY="174.0" startX="-97.0" startY="-27.0" />
+    <TableView layoutX="219.0" layoutY="283.0" prefHeight="160.0" prefWidth="690.0">
+      <columns>
+         <TableColumn prefWidth="84.0" text="Date" />
+         <TableColumn prefWidth="116.0" text="Physician" />
+         <TableColumn prefWidth="58.0" text="Temp" />
+          <TableColumn prefWidth="55.0" text="BP" />
+         <TableColumn prefWidth="174.0" text="Diagnosis" />
+         <TableColumn prefWidth="208.0" text="Medication" />
+      </columns>
+    </TableView>
+    <TableView layoutX="216.0" layoutY="494.0" prefHeight="160.0" prefWidth="697.0">
+        <columns>
+         <TableColumn prefWidth="87.0" text="Date" />
+         <TableColumn prefWidth="129.0" text="Physician" />
+          <TableColumn prefWidth="70.0" text="Weight" />
+          <TableColumn prefWidth="61.0" text="BP" />
+         <TableColumn prefWidth="78.0" text="Height" />
+         <TableColumn prefWidth="76.0" text="BMR" />
+         <TableColumn prefWidth="83.0" text="BMI" />
+         <TableColumn prefWidth="112.0" text="Total Cal" />
+        </columns>
+    </TableView>
+    <Button layoutX="427.0" layoutY="96.0" mnemonicParsing="false" text="Search" />
+    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="508.0" layoutY="99.0" prefHeight="17.0" prefWidth="644.0" text="Message" textAlignment="CENTER" />
+   <TableView layoutX="937.0" layoutY="278.0" prefHeight="151.0" prefWidth="361.0">
+      <columns>
+         <TableColumn prefWidth="94.0" text="Name" />
+         <TableColumn prefWidth="83.0" text="Dose" />
+         <TableColumn prefWidth="85.0" text="Duration" />
+         <TableColumn prefWidth="98.0" text="Frequency" />
+      </columns>
+   </TableView>
+   <TableView layoutX="933.0" layoutY="505.0" prefHeight="145.0" prefWidth="368.0">
+      <columns>
+         <TableColumn prefWidth="102.0" text="Type" />
+         <TableColumn prefWidth="66.0" text="Protein" />
+         <TableColumn prefWidth="58.0" text="Carbs" />
+         <TableColumn minWidth="0.0" prefWidth="51.0" text="Fat" />
+         <TableColumn prefWidth="90.0" text="Total Calories" />
+      </columns>
+   </TableView>
+   <Text layoutX="937.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Prescribed Medication">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Text>
+   <Text layoutX="933.0" layoutY="485.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Planned Diet">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Text>
+   <Text layoutX="587.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Physician" />
+   <ComboBox layoutX="645.0" layoutY="246.0" prefHeight="25.0" prefWidth="200.0" />
+   <Button layoutX="857.0" layoutY="246.0" mnemonicParsing="false" text="Search" />
+   <Text layoutX="589.0" layoutY="474.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Physician" />
+   <ComboBox layoutX="647.0" layoutY="457.0" prefHeight="25.0" prefWidth="200.0" />
+   <Button layoutX="859.0" layoutY="457.0" mnemonicParsing="false" text="Search" />
+   <DatePicker layoutX="285.0" layoutY="246.0" prefHeight="25.0" prefWidth="154.0" />
+   <Text layoutX="248.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
+   <Button layoutX="458.0" layoutY="246.0" mnemonicParsing="false" text="Filter" />
+   <DatePicker layoutX="285.0" layoutY="455.0" prefHeight="25.0" prefWidth="146.0" />
+   <Text layoutX="248.0" layoutY="472.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
+   <Button layoutX="450.0" layoutY="455.0" mnemonicParsing="false" text="Filter" />
+   <Label fx:id="titlePhysician" layoutX="72.0" layoutY="14.0" prefHeight="51.0" prefWidth="289.0" text="Doctor's Name and Designation">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Label>
+</AnchorPane>

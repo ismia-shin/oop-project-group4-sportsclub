@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="465.0" prefWidth="1039.0" xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.group4.sportsclub.Samiha.Member.MemberNotificationController">
+    <Label fx:id="titleMember" layoutX="87.0" layoutY="15.0" prefHeight="51.0" prefWidth="229.0"
+           text="Member ID and Name">
+        <font>
+          <Font size="14.0"/>
+        </font>
+    </Label>
+    <Line endX="935.0" layoutX="104.0" layoutY="74.0" startX="-104.0"/>
+    <Text layoutX="520.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notification ">
+        <font>
+          <Font size="25.0"/>
+        </font>
+    </Text>
+    <TableView layoutX="231.0" layoutY="141.0" prefHeight="282.0" prefWidth="777.0">
+        <columns>
+          <TableColumn prefWidth="124.0" text="Date"/>
+          <TableColumn prefWidth="152.0" text="From"/>
+          <TableColumn prefWidth="500.0" text="Message"/>
+        </columns>
+    </TableView>
+    <Text layoutX="269.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filter Date"
+          wrappingWidth="85.0">
+        <font>
+          <Font size="17.0"/>
+        </font>
+    </Text>
+    <DatePicker layoutX="361.0" layoutY="92.0" prefHeight="33.0" prefWidth="198.0"/>
+    <Button layoutX="580.0" layoutY="92.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="85.0" text="Show List">
+        <font>
+          <Font size="14.0"/>
+        </font>
+    </Button>
+    <Button layoutX="941.0" layoutY="21.0" mnemonicParsing="false" text="Log out">
+        <font>
+          <Font size="16.0"/>
+        </font>
+    </Button>
+    <ImageView fitHeight="58.0" fitWidth="39.0" layoutX="19.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../../Images/Brother's_Union_Logo_noBG_noText.png"/>
+    </ImageView>
+    <VBox layoutX="39.0" layoutY="97.0" prefHeight="282.0" prefWidth="164.0" spacing="20.0">
+        <Button mnemonicParsing="false" onAction="#SwitchToRefund" prefHeight="51.0" prefWidth="164.0"
+                text="📨 Refund">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#SwitchToCheckup" prefHeight="51.0" prefWidth="164.0"
+                text="🏥 Checkup">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#SwitchToClearance" prefHeight="51.0" prefWidth="164.0"
+                text="✅ Clearance">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Button>
+    </VBox>
+</AnchorPane>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="705.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group4.sportsclub.Samiha.FinancialOfficer.AssetController">
+    <VBox layoutX="29.0" layoutY="108.0" prefHeight="577.0" prefWidth="164.0" spacing="20.0">
+        <Button mnemonicParsing="false" onAction="#SwitchToDashboard" prefHeight="51.0" prefWidth="164.0" text="🏠 Dashboard">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#SwitchToFee" prefHeight="51.0" prefWidth="164.0" text="💳 Fee">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#SwitchToRefund" prefHeight="51.0" prefWidth="164.0" text="📨 Refund">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#SwitchToHistory" prefHeight="51.0" prefWidth="164.0" text="🔎 History">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#SwitchToEventBudget" prefHeight="51.0" prefWidth="164.0" text="🎊 Event Budget">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#SwitchToDepartmentBudget" prefHeight="68.0" prefWidth="164.0" text="📜 Department Budget" textAlignment="CENTER" wrapText="true">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#SwitchToAsset" prefHeight="51.0" prefWidth="164.0" text="📦 Asset">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+      <Button mnemonicParsing="false" onAction="#SwitchToPayroll" prefHeight="51.0" prefWidth="164.0" text="💲Payroll">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+    </VBox>
+    <Line endX="786.0" endY="-6.0" layoutX="114.0" layoutY="84.0" startX="-114.0" startY="-6.0" />
+    <Text layoutX="480.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Asset">
+        <font>
+          <Font size="25.0" />
+        </font>
+    </Text>
+    <Button layoutX="798.0" layoutY="26.0" mnemonicParsing="false" text="Log out">
+        <font>
+          <Font size="16.0" />
+        </font>
+    </Button>
+    <Button layoutX="742.0" layoutY="27.0" mnemonicParsing="false" onAction="#SwitchToNotification" text="🔔">
+        <font>
+          <Font size="17.0" />
+        </font>
+    </Button>
+    <ImageView fitHeight="58.0" fitWidth="39.0" layoutX="29.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../../Images/Brother's_Union_Logo_noBG_noText.png" />
+    </ImageView>
+    <Button layoutX="487.0" layoutY="251.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="104.0" text="Add / Edit">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </Button>
+    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="220.0" layoutY="317.0" prefHeight="17.0" prefWidth="651.0" text="Message" textAlignment="CENTER" wrapText="true">
+        <font>
+          <Font size="15.0" />
+        </font>
+    </Label>
+    <TableView layoutX="212.0" layoutY="396.0" prefHeight="282.0" prefWidth="666.0">
+        <columns>
+          <TableColumn prefWidth="96.0" text="Id" />
+          <TableColumn prefWidth="148.0" text="Name" />
+          <TableColumn prefWidth="100.0" text="Date" />
+          <TableColumn prefWidth="93.0" text="Cost" />
+          <TableColumn prefWidth="132.0" text="Amount" />
+          <TableColumn prefWidth="95.0" text="Status" />
+        </columns>
+    </TableView>
+    <Text layoutX="211.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID">
+        <font>
+          <Font size="15.0" />
+        </font>
+    </Text>
+    <TextField layoutX="278.0" layoutY="102.0" prefHeight="33.0" prefWidth="193.0" />
+    <Text layoutX="211.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" wrappingWidth="58.07666015625">
+        <font>
+          <Font size="15.0" />
+        </font>
+    </Text>
+    <DatePicker layoutX="278.0" layoutY="151.0" prefHeight="33.0" prefWidth="193.0" />
+    <Text layoutX="303.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+    <TextField layoutX="347.0" layoutY="363.0" />
+    <Button layoutX="514.0" layoutY="363.0" mnemonicParsing="false" text="Search" />
+    <Text layoutX="610.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" />
+    <ComboBox layoutX="657.0" layoutY="363.0" prefHeight="21.0" prefWidth="104.0" />
+    <Button layoutX="776.0" layoutY="363.0" mnemonicParsing="false" text="Filter" />
+    <ComboBox layoutX="278.0" layoutY="200.0" prefHeight="33.0" prefWidth="193.0" />
+    <Text layoutX="211.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" wrappingWidth="58.07666015625">
+        <font>
+          <Font size="15.0" />
+        </font>
+    </Text>
+    <Text layoutX="560.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+        <font>
+          <Font size="15.0" />
+        </font>
+    </Text>
+    <TextField layoutX="626.0" layoutY="102.0" prefHeight="33.0" prefWidth="193.0" />
+    <Text layoutX="565.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cost">
+        <font>
+          <Font size="15.0" />
+        </font>
+    </Text>
+    <TextField layoutX="626.0" layoutY="151.0" prefHeight="33.0" prefWidth="193.0" />
+    <Text layoutX="565.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount">
+        <font>
+          <Font size="15.0" />
+        </font>
+    </Text>
+    <TextField layoutX="626.0" layoutY="200.0" prefHeight="33.0" prefWidth="193.0" />
+   <Label fx:id="titleFinancialOfficer" layoutX="84.0" layoutY="20.0" prefHeight="46.0" prefWidth="218.0" text="Accountant Name">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Label>
+</AnchorPane>

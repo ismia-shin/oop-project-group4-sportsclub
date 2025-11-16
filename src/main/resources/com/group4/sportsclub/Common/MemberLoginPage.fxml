@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="525.0" prefWidth="952.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.group4.sportsclub.Common.MemberLoginPageController">
+    <ImageView fitHeight="597.0" fitWidth="1021.0" layoutX="-3.0" layoutY="-3.0" pickOnBounds="true"
+               preserveRatio="true">
+        <Image url="@../Images/Member_Login_Page_BG.jpg"/>
+    </ImageView>
+    <Text layoutX="648.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Largest Sports Club in Country">
+        <font>
+          <Font size="18.0"/>
+        </font>
+    </Text>
+    <Text layoutX="634.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="M e m b e r  L o g i n">
+        <font>
+          <Font name="Impact" size="36.0"/>
+        </font>
+    </Text>
+    <Text layoutX="623.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID">
+        <font>
+          <Font name="System Bold" size="18.0"/>
+        </font>
+    </Text>
+    <TextField fx:id="inputId" layoutX="699.0" layoutY="376.0" prefHeight="35.0" prefWidth="222.0"/>
+    <Button layoutX="753.0" layoutY="492.0" mnemonicParsing="false" onAction="#Login" prefHeight="39.0" prefWidth="80.0"
+            text="Log in" textAlignment="CENTER">
+        <font>
+          <Font size="18.0"/>
+        </font>
+    </Button>
+    <Button layoutX="905.0" layoutY="555.0" mnemonicParsing="false" onAction="#SwitchToEmployeeLoginPage"
+            text="Employee Login"/>
+    <Text layoutX="605.0" layoutY="451.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+        <font>
+          <Font name="System Bold" size="18.0"/>
+        </font>
+    </Text>
+    <TextField fx:id="inputPassword" layoutX="699.0" layoutY="427.0" prefHeight="35.0" prefWidth="222.0"/>
+    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="680.0" layoutY="84.0" pickOnBounds="true"
+               preserveRatio="true">
+        <Image url="@../Images/Brother's_Union_Logo_no_BG.png"/>
+    </ImageView>
+    <Label fx:id="resultLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="613.0" layoutY="341.0"
+           prefHeight="17.0" prefWidth="310.0" text="Message"/>
+</AnchorPane>

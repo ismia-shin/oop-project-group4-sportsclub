@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="689.0" prefWidth="817.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group4.sportsclub.Samiha.FinancialOfficer.FinancialHistoryController">
+    <VBox layoutX="29.0" layoutY="95.0" prefHeight="571.0" prefWidth="164.0" spacing="20.0">
+        <Button mnemonicParsing="false" onAction="#SwitchToDashboard" prefHeight="51.0" prefWidth="164.0" text="🏠 Dashboard">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#SwitchToFee" prefHeight="51.0" prefWidth="164.0" text="💳 Fee">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#SwitchToRefund" prefHeight="51.0" prefWidth="164.0" text="📨 Refund">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#SwitchToHistory" prefHeight="51.0" prefWidth="164.0" text="🔎 History">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#SwitchToEventBudget" prefHeight="51.0" prefWidth="164.0" text="🎊 Event Budget">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#SwitchToDepartmentBudget" prefHeight="68.0" prefWidth="164.0" text="📜 Department Budget" textAlignment="CENTER" wrapText="true">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#SwitchToAsset" prefHeight="51.0" prefWidth="164.0" text="📦 Asset">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+      <Button mnemonicParsing="false" onAction="#SwitchToPayroll" prefHeight="51.0" prefWidth="164.0" text="💲Payroll">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+    </VBox>
+    <Line endX="721.5" endY="-6.0" layoutX="114.0" layoutY="84.0" startX="-114.0" startY="-6.0" />
+    <Text layoutX="399.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="History">
+        <font>
+          <Font size="25.0" />
+        </font>
+    </Text>
+    <Button layoutX="740.0" layoutY="25.0" mnemonicParsing="false" text="Log out">
+        <font>
+          <Font size="16.0" />
+        </font>
+    </Button>
+    <Button layoutX="670.0" layoutY="24.0" mnemonicParsing="false" onAction="#SwitchToNotification" text="🔔">
+        <font>
+          <Font size="17.0" />
+        </font>
+    </Button>
+    <ImageView fitHeight="58.0" fitWidth="39.0" layoutX="29.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../../Images/Brother's_Union_Logo_noBG_noText.png" />
+    </ImageView>
+    <Text layoutX="227.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Basic Information">
+        <font>
+          <Font name="System Bold" size="16.0" />
+        </font>
+    </Text>
+    <Text layoutX="220.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID">
+        <font>
+          <Font size="16.0" />
+        </font>
+    </Text>
+    <TextField layoutX="257.0" layoutY="106.0" prefHeight="33.0" prefWidth="154.0" />
+    <Label layoutX="227.0" layoutY="196.0" prefHeight="21.0" prefWidth="176.0" text="Name">
+        <font>
+          <Font size="15.0" />
+        </font>
+    </Label>
+    <Line endX="521.5" layoutX="302.0" layoutY="189.0" startX="-81.5" />
+    <Line endX="-97.0" endY="50.0" layoutX="317.0" layoutY="188.0" startX="-97.0" startY="-27.0" />
+    <Button layoutX="436.0" layoutY="106.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="57.0" text="Search" />
+    <Label layoutX="438.0" layoutY="196.0" prefHeight="21.0" prefWidth="154.0" text="Mobile Number">
+        <font>
+          <Font size="15.0" />
+        </font>
+    </Label>
+    <Label layoutX="646.0" layoutY="196.0" prefHeight="21.0" prefWidth="164.0" text="NID Number">
+        <font>
+          <Font size="15.0" />
+        </font>
+    </Label>
+    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="221.0" layoutY="248.0" prefHeight="21.0" prefWidth="602.0" text="Message" textAlignment="CENTER" wrapText="true">
+        <font>
+          <Font size="15.0" />
+        </font>
+    </Label>
+    <TableView layoutX="215.0" layoutY="283.0" prefHeight="375.0" prefWidth="602.0">
+      <columns>
+          <TableColumn prefWidth="124.0" text="Date" />
+          <TableColumn prefWidth="185.0" text="Month Covered" />
+          <TableColumn prefWidth="132.0" text="AmountPaid" />
+          <TableColumn prefWidth="133.0" text="Payment Method" />
+          <TableColumn prefWidth="127.0" text="Recorded By" />
+      </columns>
+      <columnResizePolicy>
+         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+      </columnResizePolicy>
+    </TableView>
+   <Label fx:id="titleFinancialOfficer" layoutX="84.0" layoutY="20.0" prefHeight="46.0" prefWidth="218.0" text="Accountant Name">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Label>
+</AnchorPane>
