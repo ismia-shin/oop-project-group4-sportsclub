@@ -89,6 +89,7 @@ public class RequestRefundController
         MemberNotificationController memberNotificationController = loader.getController();
         memberNotificationController.setM(this.m);
         memberNotificationController.setTitleMember();
+        memberNotificationController.tableNotificationLoader();
 
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);

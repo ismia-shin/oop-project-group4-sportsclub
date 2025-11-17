@@ -79,6 +79,8 @@ public class CheckupPendingController implements Initializable {
 
     }
 
+
+
     public void showList(ActionEvent actionEvent){
 
         try{
@@ -193,18 +195,14 @@ public class CheckupPendingController implements Initializable {
 
     }
 
-    public void onSaveFindPhysician(){
-
-        for(Physician i: physicianList){
-
-            if(p.equals(i)){
-
-                i=p;
-
+    public void updatePhysicianList() {
+        for (int i = 0; i < physicianList.size(); i++) {
+            if (p.equals(physicianList.get(i))) {
+                physicianList.set(i, p);
+                System.out.println("Physician data updated in list.");
+                return;
             }
-
         }
-
     }
 
     ArrayList<Physician> physicianList = new ArrayList<>();
@@ -290,7 +288,7 @@ public class CheckupPendingController implements Initializable {
                 resultLabel.setText("Request Approved");
                 table.refresh();
 
-                onSaveFindPhysician();
+                updatePhysicianList();
                 savePhysicianData();
 
                 notifications.add(new Notification(p.getName()+ " has accepted your request for checkup on " + chosenCheckup.getRequestedDate().toString(), p, chosenCheckup.member, LocalDate.now()));
@@ -304,11 +302,12 @@ public class CheckupPendingController implements Initializable {
 
         Agenda agenda = new Agenda(chosenCheckup.requestedDate);
         agenda.checkupList.add(chosenCheckup);
+        p.getAllAgenda().add(agenda);
         p.pendingCheckup.remove(chosenCheckup);
 
         resultLabel.setText("Request Approved");
 
-        onSaveFindPhysician();
+        updatePhysicianList();
         savePhysicianData();
 
         table.refresh();
@@ -329,10 +328,11 @@ public class CheckupPendingController implements Initializable {
         saveNotificationData();
 
         p.pendingCheckup.remove(chosenCheckup);
+        tableList.remove(chosenCheckup);
 
         resultLabel.setText("Request Denied");
 
-        onSaveFindPhysician();
+        updatePhysicianList();
         savePhysicianData();
 
         table.refresh();
@@ -348,6 +348,7 @@ public class CheckupPendingController implements Initializable {
         PhysicianDashboardController physicianDashboardController = loader.getController();
         physicianDashboardController.setP(this.p);
         physicianDashboardController.setTitlePhysician();
+
 
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);

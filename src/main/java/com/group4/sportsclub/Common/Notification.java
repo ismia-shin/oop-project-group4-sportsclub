@@ -62,7 +62,7 @@ public class Notification implements Serializable {
 
     @Override
     public String toString() {
-        return "Message: " + this.message + "\n From: " + this.fromUser + "\n Sent: " + this.sentDate.toString();
+        return "Message: " + this.message + "\n From: " + this.fromUser.name + "\n Sent: " + this.sentDate.toString();
     }
 
     public String getFromUserName(){
