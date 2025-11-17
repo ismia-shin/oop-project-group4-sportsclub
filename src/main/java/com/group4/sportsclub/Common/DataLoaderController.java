@@ -23,7 +23,7 @@ public class DataLoaderController
     @javafx.fxml.FXML
     public void initialize() {
     }
-    ArrayList<Member> memberList = new ArrayList<>();
+    ArrayList<Notification> notifications = new ArrayList<>();
 
     @javafx.fxml.FXML
     public void loadData(ActionEvent actionEvent){
@@ -34,9 +34,9 @@ public class DataLoaderController
 
     @javafx.fxml.FXML
     public void saveData(ActionEvent actionEvent) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("data/Samiha/User/memberList.dat"))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("data/Samiha/User/notifications.dat"))) {
 
-            oos.writeObject(new ArrayList<>(memberList));
+            oos.writeObject(new ArrayList<>(notifications));
 
             System.out.println("Data saved successfully");
 

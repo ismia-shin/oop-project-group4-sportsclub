@@ -14,4 +14,58 @@ public class Notification implements Serializable {
     protected User toUser;
     protected LocalDate sentDate;
 
+    public Notification(String message, User fromUser, User toUser, LocalDate sentDate) {
+        this.message = message;
+        this.fromUser = fromUser;
+        this.toUser = toUser;
+        this.sentDate = sentDate;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public User getFromUser() {
+        return fromUser;
+    }
+
+    public void setFromUser(User fromUser) {
+        this.fromUser = fromUser;
+    }
+
+    public User getToUser() {
+        return toUser;
+    }
+
+    public void setToUser(User toUser) {
+        this.toUser = toUser;
+    }
+
+    public LocalDate getSentDate() {
+        return sentDate;
+    }
+
+    public void setSentDate(LocalDate sentDate) {
+        this.sentDate = sentDate;
+    }
+
+
+    public Boolean equals(Notification other){
+
+        return this.message.equals(other.message) && this.fromUser.equals(other.fromUser) && this.toUser.equals(other.toUser) && this.sentDate.equals(other.sentDate);
+
+    }
+
+    @Override
+    public String toString() {
+        return "Message: " + this.message + "\n From: " + this.fromUser + "\n Sent: " + this.sentDate.toString();
+    }
+
+    public String getFromUserName(){
+        return fromUser.name;
+    }
 }

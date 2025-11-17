@@ -1,41 +1,30 @@
 package com.group4.sportsclub.Samiha.Physician;
 
+import com.group4.sportsclub.Common.Notification;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
+import java.net.URL;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Objects;
+import java.util.ResourceBundle;
 
-public class CheckupPendingController
-{
-    @javafx.fxml.FXML
-    private TableColumn tableType;
-    @javafx.fxml.FXML
-    private Label outDate;
+public class CheckupPendingController implements Initializable {
+
     @javafx.fxml.FXML
     private Label titlePhysician;
-    @javafx.fxml.FXML
-    private ComboBox searchType;
-    @javafx.fxml.FXML
-    private DatePicker searchDate;
-    @javafx.fxml.FXML
-    private Label outName;
-    @javafx.fxml.FXML
-    private Label outType;
-    @javafx.fxml.FXML
-    private TableView table;
-    @javafx.fxml.FXML
-    private TableColumn tableName;
-    @javafx.fxml.FXML
-    private Label resultLabel;
-
-    @javafx.fxml.FXML
-    public void initialize() {
-    }
 
     public Physician p;
 
@@ -49,6 +38,305 @@ public class CheckupPendingController
 
     public void setTitlePhysician(){
         titlePhysician.setText(p.name + "\n" + p.designation);
+    }
+
+
+    @javafx.fxml.FXML
+    private TableColumn<Checkup, String> tableType;
+    @javafx.fxml.FXML
+    private Label outDate;
+    @javafx.fxml.FXML
+    private Label resultLabel;
+    @javafx.fxml.FXML
+    private ComboBox<String> searchType;
+    @javafx.fxml.FXML
+    private DatePicker searchDate;
+    @javafx.fxml.FXML
+    private Label outName;
+    @javafx.fxml.FXML
+    private Label outType;
+    @javafx.fxml.FXML
+    private TableView<Checkup> table;
+    @javafx.fxml.FXML
+    private TableColumn<Checkup, String> tableName;
+
+    String[] inCheckupTypeList = {"Health", "Injury", "Nutrition", "Health & Nutrition"};
+
+    ObservableList<Checkup> tableList = FXCollections.observableArrayList();
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        searchType.getItems().addAll(inCheckupTypeList);
+
+        table.setItems(tableList);
+
+        tableName.setCellValueFactory(new PropertyValueFactory<Checkup, String>("memberName"));
+        tableType.setCellValueFactory(new PropertyValueFactory<Checkup, String>("typeCheckup"));
+
+        loadPhysicianData();
+        loadNotificationData();
+
+    }
+
+    public void showList(ActionEvent actionEvent){
+
+        try{
+
+            if(searchDate.getValue() != null && searchType.getValue() == null){
+
+                tableList.clear();
+
+                for(Checkup i : p.getPendingCheckup()) {
+
+                    if (i.getRequestedDate().equals(searchDate.getValue())) {
+
+                        tableList.add(i);
+
+                    }
+
+                }
+
+                if (tableList.isEmpty()){
+
+                    resultLabel.setText("No request found on the following date");
+
+                }
+                else{
+
+                    resultLabel.setText("Table updated");
+                    table.refresh();
+
+                }
+
+            } else if (searchDate.getValue() == null && searchType.getValue() != null) {
+
+                tableList.clear();
+
+                for(Checkup i : p.getPendingCheckup()) {
+
+                    if (Objects.equals(i.getTypeCheckup(), searchType.getValue())) {
+
+                        tableList.add(i);
+
+                    }
+
+                }
+
+                if (tableList.isEmpty()){
+
+                    resultLabel.setText("No request found with the following type");
+
+                }
+                else{
+
+                    resultLabel.setText("Table updated");
+                    table.refresh();
+
+                }
+
+            } else if (searchDate.getValue() != null && searchType.getValue() != null) {
+
+                tableList.clear();
+
+                for(Checkup i : p.getPendingCheckup()) {
+
+                    if (Objects.equals(i.getTypeCheckup(), searchType.getValue()) && i.getRequestedDate().equals(searchDate.getValue())) {
+
+                        tableList.add(i);
+
+                    }
+
+                }
+
+                if (tableList.isEmpty()){
+
+                    resultLabel.setText("No request found with the following type and date");
+
+                }
+                else{
+
+                    resultLabel.setText("Table updated");
+                    table.refresh();
+
+                }
+
+            }
+
+        }catch (Exception e){
+
+            resultLabel.setText("Something Went Wrong!");
+
+        }
+
+    }
+
+    Checkup chosenCheckup;
+
+    public void rowClicked(MouseEvent event){
+
+        if(tableList.isEmpty()){
+
+            resultLabel.setText("Nothing to select");
+            return;
+
+        }
+
+        Checkup clickedCheckup = table.getSelectionModel().getSelectedItem();
+        outDate.setText(clickedCheckup.getRequestedDate().toString());
+        outName.setText(clickedCheckup.getMember().getName());
+        outType.setText(clickedCheckup.getTypeCheckup());
+
+        chosenCheckup = clickedCheckup;
+
+        table.getSelectionModel().clearSelection();
+
+    }
+
+    public void onSaveFindPhysician(){
+
+        for(Physician i: physicianList){
+
+            if(p.equals(i)){
+
+                i=p;
+
+            }
+
+        }
+
+    }
+
+    ArrayList<Physician> physicianList = new ArrayList<>();
+
+    @SuppressWarnings("unchecked")
+    private void loadPhysicianData() {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("data/Samiha/User/physicianList.dat"))) {
+
+            ArrayList<Physician> savedList = (ArrayList<Physician>) ois.readObject();
+
+            physicianList.clear();
+            physicianList.addAll(savedList);
+
+            System.out.println("Data loaded successfully from physicianList.dat");
+
+        } catch (Exception e) {
+            System.err.println("Error loading data: " + e.getMessage());
+
+        }
+    }
+
+    public void savePhysicianData() {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("data/Samiha/User/physicianList.dat"))) {
+
+            oos.writeObject(new ArrayList<>(physicianList));
+
+            System.out.println("Data saved successfully");
+
+        } catch (Exception e) {
+            System.err.println("Error saving data: " + e.getMessage());
+
+        }
+    }
+
+    ArrayList<Notification> notifications = new ArrayList<>();
+
+    @SuppressWarnings("unchecked")
+    private void loadNotificationData() {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("data/Samiha/User/notifications.dat"))) {
+
+            ArrayList<Notification> savedList = (ArrayList<Notification>) ois.readObject();
+
+            notifications.clear();
+            notifications.addAll(savedList);
+
+            System.out.println("Data loaded successfully from notifications.dat");
+
+        } catch (Exception e) {
+            System.err.println("Error loading data: " + e.getMessage());
+
+        }
+    }
+
+    public void saveNotificationData() {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("data/Samiha/User/notifications.dat"))) {
+
+            oos.writeObject(new ArrayList<>(notifications));
+
+            System.out.println("Data saved successfully");
+
+        } catch (Exception e) {
+            System.err.println("Error saving data: " + e.getMessage());
+
+        }
+    }
+
+    public void Approve(ActionEvent actionEvent){
+
+        if (chosenCheckup == null){
+
+            resultLabel.setText("No checkup selected");
+            return;
+
+        }
+
+        for(Agenda i: p.getAllAgenda()){
+
+            if (i.getCheckupDate().equals(chosenCheckup.getRequestedDate())){
+
+                i.checkupList.add(chosenCheckup);
+                p.pendingCheckup.remove(chosenCheckup);
+
+                resultLabel.setText("Request Approved");
+                table.refresh();
+
+                onSaveFindPhysician();
+                savePhysicianData();
+
+                notifications.add(new Notification(p.getName()+ " has accepted your request for checkup on " + chosenCheckup.getRequestedDate().toString(), p, chosenCheckup.member, LocalDate.now()));
+                saveNotificationData();
+
+                return;
+
+            }
+
+        }
+
+        Agenda agenda = new Agenda(chosenCheckup.requestedDate);
+        agenda.checkupList.add(chosenCheckup);
+        p.pendingCheckup.remove(chosenCheckup);
+
+        resultLabel.setText("Request Approved");
+
+        onSaveFindPhysician();
+        savePhysicianData();
+
+        table.refresh();
+
+        notifications.add(new Notification(p.getName()+ " has accepted your request for checkup on " + chosenCheckup.getRequestedDate().toString(), p, chosenCheckup.member, LocalDate.now()));
+        saveNotificationData();
+
+    }
+
+    public void Deny(ActionEvent actionEvent){
+
+        if (chosenCheckup == null) {
+            resultLabel.setText("No checkup selected");
+            return;
+        }
+
+        notifications.add(new Notification(p.getName()+ " has denied your request for checkup on " + chosenCheckup.getRequestedDate().toString() + ". Please contact your physician for details", p, chosenCheckup.member, LocalDate.now()));
+        saveNotificationData();
+
+        p.pendingCheckup.remove(chosenCheckup);
+
+        resultLabel.setText("Request Denied");
+
+        onSaveFindPhysician();
+        savePhysicianData();
+
+        table.refresh();
+
     }
 
     @javafx.fxml.FXML
@@ -68,7 +356,7 @@ public class CheckupPendingController
 
     }
 
-    @Deprecated
+    @javafx.fxml.FXML
     public void SwitchToCheckupPending(ActionEvent actionEvent) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("CheckupPending.fxml"));
@@ -85,7 +373,7 @@ public class CheckupPendingController
 
     }
 
-    @Deprecated
+    @javafx.fxml.FXML
     public void SwitchToClearance(ActionEvent actionEvent) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Clearance.fxml"));

@@ -29,9 +29,8 @@ public class Agenda implements Serializable {
         this.checkupList = checkupList;
     }
 
-    public Agenda(LocalDate checkupDate, ArrayList<Checkup> checkupList) {
+    public Agenda(LocalDate checkupDate) {
         this.checkupDate = checkupDate;
-        this.checkupList = checkupList;
     }
 
 }

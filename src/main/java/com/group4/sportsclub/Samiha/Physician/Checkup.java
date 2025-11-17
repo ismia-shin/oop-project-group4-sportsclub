@@ -51,4 +51,8 @@ public class Checkup implements Serializable {
 
     }
 
+    public String getMemberName() {
+        return member.getName();
+    }
+
 }
