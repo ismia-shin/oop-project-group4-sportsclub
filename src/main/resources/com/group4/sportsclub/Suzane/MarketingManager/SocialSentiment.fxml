@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group4.sportsclub.Suzane.MarketingManager.SocialSentimentController">
+    <children>
+        <SplitPane dividerPositions="0.6" layoutX="10.0" layoutY="10.0" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                    <children>
+                        <VBox layoutX="10.0" layoutY="10.0" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                            <children>
+                                <Label text="Sentiment Overview" textFill="#2c3e50">
+                                    <font>
+                                        <Font name="System Bold" size="16.0" />
+                                    </font>
+                                </Label>
+
+                                <PieChart fx:id="sentimentPieChart" prefHeight="250.0" title="Positive vs Negative" />
+
+                                <Label text="Live Social Mentions:" style="-fx-font-weight: bold;" />
+                                <ListView fx:id="sentimentList" VBox.vgrow="ALWAYS" />
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #f9f9f9;">
+                    <children>
+                        <VBox layoutX="15.0" layoutY="15.0" spacing="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                            <children>
+                                <Label text="Official Response Tool" textFill="#e67e22">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Draft a reply to selected mention:" textFill="#7f8c8d" />
+                                <TextArea fx:id="responseDraft" prefHeight="200.0" wrapText="true" promptText="Type your official response here..." />
+                                <Button maxWidth="Infinity" onAction="#handlePostResponse" style="-fx-background-color: #2c3e50; -fx-text-fill: white;" text="Post Response" />
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>

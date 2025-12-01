@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox prefHeight="600.0" prefWidth="800.0" spacing="20.0" style="-fx-padding: 20;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group4.sportsclub.Suzane.FacilitiesManager.EquipmentInventoryController">
+    <children>
+        <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+            <children>
+                <Label text="Equipment Inventory List" textFill="#2c3e50">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+                <ListView fx:id="equipList" VBox.vgrow="ALWAYS" />
+            </children>
+        </VBox>
+
+        <VBox prefWidth="350.0" spacing="15.0">
+            <children>
+                <Label text="Inventory Status Summary" textFill="#27ae60">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+
+                <PieChart fx:id="inventoryChart" labelsVisible="true" prefHeight="250.0" title="Condition Overview" />
+
+                <Separator />
+
+                <Label text="Actions" style="-fx-font-weight: bold;" />
+                <Label text="Update Selected Item Condition:" />
+                <ComboBox fx:id="conditionCombo" maxWidth="Infinity" />
+
+                <Button maxWidth="Infinity" onAction="#handleUpdateStatus" text="Update Status" />
+
+                <Separator />
+
+                <Button maxWidth="Infinity" onAction="#handleGeneratePO" style="-fx-background-color: #27ae60; -fx-text-fill: white;" text="Generate Purchase Order" />
+            </children>
+        </VBox>
+    </children>
+</HBox>
