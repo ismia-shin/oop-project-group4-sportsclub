@@ -12,4 +12,23 @@ public class Reports implements Serializable {
     protected ArrayList<MealPlan> mealPlanHistory = new ArrayList<>();
     protected ArrayList<Prescription> prescriptionHistory = new ArrayList<>();
 
+    public ArrayList<MealPlan> getMealPlanHistory() {
+        return mealPlanHistory;
+    }
+
+    public void setMealPlanHistory(ArrayList<MealPlan> mealPlanHistory) {
+        this.mealPlanHistory = mealPlanHistory;
+    }
+
+    public ArrayList<Prescription> getPrescriptionHistory() {
+        return prescriptionHistory;
+    }
+
+    public void setPrescriptionHistory(ArrayList<Prescription> prescriptionHistory) {
+        this.prescriptionHistory = prescriptionHistory;
+    }
+
+    public void addPrescription(Prescription p){
+        prescriptionHistory.add(p);
+    }
 }
