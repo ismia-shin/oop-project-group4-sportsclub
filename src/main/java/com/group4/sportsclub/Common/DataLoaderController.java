@@ -38,19 +38,19 @@ public class DataLoaderController
 
     }
 
-    @javafx.fxml.FXML
-    public void saveData(ActionEvent actionEvent) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("data/Samiha/User/physicianList.dat"))) {
-
-            oos.writeObject(new ArrayList<>(physicianList));
-
-            System.out.println("Data saved successfully");
-
-        } catch (Exception e) {
-            System.err.println("Error saving data: " + e.getMessage());
-
-        }
-    }
+//    @javafx.fxml.FXML
+//    public void saveData(ActionEvent actionEvent) {
+//        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("data/Samiha/User/physicianList.dat"))) {
+//
+//            oos.writeObject(new ArrayList<>(physicianList));
+//
+//            System.out.println("Data saved successfully");
+//
+//        } catch (Exception e) {
+//            System.err.println("Error saving data: " + e.getMessage());
+//
+//        }
+//    }
 
 //    public void saveDataFR(ActionEvent actionEvent) {
 //        try {
@@ -64,6 +64,6 @@ public class DataLoaderController
 //            }
 //
 //        } catch (Exception e) {
-//            System.err.println("Error saving single report object: " + e.getMessage());
+//            System.err.println("Error saving single object: " + e.getMessage());
 //        }
 }

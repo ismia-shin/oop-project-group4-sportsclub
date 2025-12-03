@@ -31,4 +31,8 @@ public class Reports implements Serializable {
     public void addPrescription(Prescription p){
         prescriptionHistory.add(p);
     }
+
+    public void addMealPlan(MealPlan m){
+        mealPlanHistory.add(m);
+    }
 }
