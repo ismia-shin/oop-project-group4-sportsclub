@@ -3,7 +3,6 @@ module com.group4.sportsclub {
     requires javafx.fxml;
     requires javafx.graphics;
     requires javafx.base;
-    requires com.group4.sportsclub;
 
     opens com.group4.sportsclub.Samiha.FinancialOfficer to javafx.fxml, javafx.base;
     opens com.group4.sportsclub.Samiha.Physician to javafx.fxml, javafx.base;

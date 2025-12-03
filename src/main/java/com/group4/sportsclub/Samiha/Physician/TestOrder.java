@@ -68,12 +68,9 @@ public class TestOrder implements Serializable {
 
     @Override
     public String toString() {
-        return "TestOrder{" +
-                "member=" + member +
-                ", physician=" + physician +
-                ", date=" + date +
-                ", medicalStatement='" + medicalStatement + '\'' +
-                ", testList=" + testList +
-                '}';
+        return "Physician=" + physician.name + "\n" +
+                "Date=" + date + "\n" +
+                "Medical Statement='" + medicalStatement + "\n" +
+                "Test List=" + testList;
     }
 }
