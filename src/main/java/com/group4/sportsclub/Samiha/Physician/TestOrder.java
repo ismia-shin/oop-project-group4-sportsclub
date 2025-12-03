@@ -18,4 +18,62 @@ public class TestOrder implements Serializable {
     protected String medicalStatement;
     protected ArrayList<String> testList = new ArrayList<String>();
 
+    public TestOrder(Member member, Physician physician, LocalDate date) {
+        this.member = member;
+        this.physician = physician;
+        this.date = date;
+    }
+
+    public Member getMember() {
+        return member;
+    }
+
+    public void setMember(Member member) {
+        this.member = member;
+    }
+
+    public Physician getPhysician() {
+        return physician;
+    }
+
+    public void setPhysician(Physician physician) {
+        this.physician = physician;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public String getMedicalStatement() {
+        return medicalStatement;
+    }
+
+    public void setMedicalStatement(String medicalStatement) {
+        this.medicalStatement = medicalStatement;
+    }
+
+    public ArrayList<String> getTestList() {
+        return testList;
+    }
+
+    public void setTestList(ArrayList<String> testList) {
+        this.testList = testList;
+    }
+
+    public void addTest(String test){testList.add(test);}
+
+    @Override
+    public String toString() {
+        return "TestOrder{" +
+                "member=" + member +
+                ", physician=" + physician +
+                ", date=" + date +
+                ", medicalStatement='" + medicalStatement + '\'' +
+                ", testList=" + testList +
+                '}';
+    }
 }
