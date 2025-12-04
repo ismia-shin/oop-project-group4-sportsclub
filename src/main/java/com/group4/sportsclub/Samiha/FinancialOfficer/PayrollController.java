@@ -161,6 +161,7 @@ public class PayrollController
         FinancialNotificationController financialNotificationController = loader.getController();
         financialNotificationController.setF(this.f);
         financialNotificationController.setTitleFinancialOfficer();
+        financialNotificationController.tableNotificationLoader();
 
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
