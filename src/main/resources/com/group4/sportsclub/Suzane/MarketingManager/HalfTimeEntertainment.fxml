@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group4.sportsclub.Suzane.MarketingManager.HalfTimeEntertainmentController">
+    <children>
+        <SplitPane dividerPositions="0.4" layoutX="10.0" layoutY="10.0" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                    <children>
+                        <VBox spacing="10.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                            <children>
+                                <Label text="Scheduled Matches" textFill="#2c3e50">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <ListView fx:id="matchListView" VBox.vgrow="ALWAYS" />
+                                <Label text="Select a match to assign entertainment." textFill="#7f8c8d" wrapText="true">
+                                    <font>
+                                        <Font size="10.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #f9f9f9;">
+                    <children>
+                        <VBox spacing="15.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                            <children>
+                                <Label text="Entertainment Planning" textFill="#e67e22">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+
+                                <Label text="Performer / Act Name:" />
+                                <TextField fx:id="performerField" promptText="e.g. Local Band, Cheer Squad" />
+
+                                <Label text="Performance Type &amp; Requirements:" />
+                                <TextArea fx:id="requirementsArea" prefHeight="80.0" promptText="e.g. Sound system needed, 10 mins duration" />
+
+                                <Label text="Rehearsal Date:" />
+                                <DatePicker fx:id="rehearsalDate" maxWidth="Infinity" />
+
+                                <Button maxWidth="Infinity" onAction="#handleAssign" style="-fx-background-color: #2c3e50; -fx-text-fill: white;" text="Confirm &amp; Notify Facilities" />
+
+                                <Label text="Entertainment Roster:" style="-fx-font-weight: bold; -fx-padding: 10 0 0 0;" />
+                                <TableView fx:id="rosterTable" VBox.vgrow="ALWAYS">
+                                    <columns>
+                                        <TableColumn fx:id="colMatch" prefWidth="120.0" text="Match" />
+                                        <TableColumn fx:id="colAct" prefWidth="120.0" text="Act" />
+                                        <TableColumn fx:id="colStatus" prefWidth="100.0" text="Status" />
+                                    </columns>
+                                    <columnResizePolicy>
+                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                    </columnResizePolicy>
+                                </TableView>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>

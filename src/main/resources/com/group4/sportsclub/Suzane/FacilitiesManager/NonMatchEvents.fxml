@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group4.sportsclub.Suzane.FacilitiesManager.NonMatchEventsController">
+    <children>
+        <VBox spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+            <children>
+                <Label text="External Event Coordination" textFill="#27ae60">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+
+                <HBox spacing="20.0" style="-fx-background-color: #f4f4f4; -fx-padding: 20; -fx-border-color: #ccc; -fx-border-radius: 5;">
+                    <children>
+                        <VBox spacing="10.0" prefWidth="300.0">
+                            <Label text="Event Name:" />
+                            <TextField fx:id="eventNameField" promptText="e.g. Annual Concert" />
+                            <Label text="Date:" />
+                            <DatePicker fx:id="eventDate" maxWidth="Infinity" />
+                        </VBox>
+                        <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+                            <Label text="Utility Requirements:" />
+                            <CheckBox fx:id="chkPower" text="High Voltage Power Setup" />
+                            <CheckBox fx:id="chkWater" text="Water Supply &amp; Sanitation" />
+                            <CheckBox fx:id="chkSecurity" text="Perimeter Fencing" />
+                            <Button onAction="#handleCoordinate" maxWidth="Infinity" style="-fx-background-color: #2c3e50; -fx-text-fill: white;" text="Block Date &amp; Generate Tasks" />
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <Label text="Upcoming External Events" style="-fx-font-weight: bold;"/>
+                <TableView fx:id="eventTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colEvent" prefWidth="200.0" text="Event Name" />
+                        <TableColumn fx:id="colDate" prefWidth="120.0" text="Date" />
+                        <TableColumn fx:id="colReqs" prefWidth="250.0" text="Requirements" />
+                        <TableColumn fx:id="colStatus" prefWidth="120.0" text="Setup Status" />
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                </TableView>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

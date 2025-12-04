@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group4.sportsclub.Suzane.FacilitiesManager.CleanupController">
+    <children>
+        <VBox alignment="CENTER" spacing="20.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="50.0">
+            <children>
+                <Label text="Stadium Cleanup Tracker" textFill="#2c3e50">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+
+                <Label text="Live Progress:" />
+                <ProgressBar fx:id="cleanupProgress" prefHeight="30.0" prefWidth="600.0" progress="0.0" />
+                <Label fx:id="progressLabel" text="0% Completed" textFill="#7f8c8d" />
+
+                <VBox spacing="10.0" style="-fx-background-color: #ecf0f1; -fx-padding: 20; -fx-background-radius: 10;">
+                    <children>
+                        <Label text="Zone Checklists (Mark as Cleaned):" style="-fx-font-weight: bold;"/>
+                        <CheckBox fx:id="checkStandA" text="North Stand (Block A-D)" onAction="#updateProgress"/>
+                        <CheckBox fx:id="checkStandB" text="South Stand (Block E-H)" onAction="#updateProgress"/>
+                        <CheckBox fx:id="checkField" text="Main Playing Field &amp; Dugout" onAction="#updateProgress"/>
+                        <CheckBox fx:id="checkRestrooms" text="Public Restrooms (All Zones)" onAction="#updateProgress"/>
+                        <CheckBox fx:id="checkParking" text="Parking Lot &amp; Entry Gates" onAction="#updateProgress"/>
+                    </children>
+                </VBox>
+
+                <Button onAction="#handleCompleteJob" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 14px;" text="Submit Final Report" />
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
