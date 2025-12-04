@@ -1,5 +1,6 @@
 package com.group4.sportsclub.Common;
 
+import com.group4.sportsclub.Samiha.FinancialOfficer.Asset;
 import com.group4.sportsclub.Samiha.FinancialOfficer.Fee;
 import com.group4.sportsclub.Samiha.Member.Member;
 import com.group4.sportsclub.Samiha.Physician.Physician;
@@ -25,7 +26,7 @@ public class DataLoaderController
     @javafx.fxml.FXML
     public void initialize() {
     }
-    ArrayList<Fee> feeHistory = new ArrayList<>();
+    ArrayList<Asset> assetList = new ArrayList<>();
 
     @javafx.fxml.FXML
     public void loadData(ActionEvent actionEvent){
@@ -34,9 +35,9 @@ public class DataLoaderController
 
     @javafx.fxml.FXML
     public void saveData(ActionEvent actionEvent) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("data/Samiha/FinancialOfficer/feeHistory.bin"))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("data/Samiha/FinancialOfficer/assets.bin"))) {
 
-            oos.writeObject(new ArrayList<>(feeHistory));
+            oos.writeObject(new ArrayList<>(assetList));
 
             System.out.println("Data saved successfully");
 

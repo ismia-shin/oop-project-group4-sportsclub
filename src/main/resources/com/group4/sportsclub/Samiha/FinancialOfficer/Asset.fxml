@@ -77,24 +77,24 @@
     <ImageView fitHeight="58.0" fitWidth="39.0" layoutX="29.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
         <Image url="@../../Images/Brother's_Union_Logo_noBG_noText.png" />
     </ImageView>
-    <Button layoutX="487.0" layoutY="251.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="104.0" text="Add / Edit">
+    <Button layoutX="406.0" layoutY="260.0" mnemonicParsing="false" onAction="#Add" prefHeight="35.0" prefWidth="104.0" text="Add">
         <font>
           <Font size="13.0" />
         </font>
     </Button>
-    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="220.0" layoutY="317.0" prefHeight="17.0" prefWidth="651.0" text="Message" textAlignment="CENTER" wrapText="true">
+    <Label fx:id="resultLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="220.0" layoutY="317.0" prefHeight="17.0" prefWidth="651.0" text="Message" textAlignment="CENTER" wrapText="true">
         <font>
           <Font size="15.0" />
         </font>
     </Label>
-    <TableView layoutX="212.0" layoutY="396.0" prefHeight="282.0" prefWidth="666.0">
+    <TableView fx:id="table" layoutX="212.0" layoutY="407.0" onMouseClicked="#rowClicked" prefHeight="265.0" prefWidth="666.0">
         <columns>
-          <TableColumn prefWidth="96.0" text="Id" />
-          <TableColumn prefWidth="148.0" text="Name" />
-          <TableColumn prefWidth="100.0" text="Date" />
-          <TableColumn prefWidth="93.0" text="Cost" />
-          <TableColumn prefWidth="132.0" text="Amount" />
-          <TableColumn prefWidth="95.0" text="Status" />
+          <TableColumn fx:id="tableId" prefWidth="96.0" text="Id" />
+          <TableColumn fx:id="tableName" prefWidth="148.0" text="Name" />
+          <TableColumn fx:id="tableDate" prefWidth="100.0" text="Date" />
+          <TableColumn fx:id="tableCost" prefWidth="93.0" text="Cost" />
+          <TableColumn fx:id="tableAmount" prefWidth="132.0" text="Amount" />
+          <TableColumn fx:id="tableStatus" prefWidth="95.0" text="Status" />
         </columns>
     </TableView>
     <Text layoutX="211.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID">
@@ -102,20 +102,20 @@
           <Font size="15.0" />
         </font>
     </Text>
-    <TextField layoutX="278.0" layoutY="102.0" prefHeight="33.0" prefWidth="193.0" />
+    <TextField fx:id="inId" layoutX="278.0" layoutY="102.0" prefHeight="33.0" prefWidth="193.0" />
     <Text layoutX="211.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" wrappingWidth="58.07666015625">
         <font>
           <Font size="15.0" />
         </font>
     </Text>
-    <DatePicker layoutX="278.0" layoutY="151.0" prefHeight="33.0" prefWidth="193.0" />
-    <Text layoutX="303.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
-    <TextField layoutX="347.0" layoutY="363.0" />
-    <Button layoutX="514.0" layoutY="363.0" mnemonicParsing="false" text="Search" />
-    <Text layoutX="610.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" />
-    <ComboBox layoutX="657.0" layoutY="363.0" prefHeight="21.0" prefWidth="104.0" />
-    <Button layoutX="776.0" layoutY="363.0" mnemonicParsing="false" text="Filter" />
-    <ComboBox layoutX="278.0" layoutY="200.0" prefHeight="33.0" prefWidth="193.0" />
+    <DatePicker fx:id="inDate" layoutX="278.0" layoutY="151.0" prefHeight="33.0" prefWidth="193.0" />
+    <Text layoutX="213.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+    <TextField fx:id="searchId" layoutX="257.0" layoutY="363.0" />
+    <Button layoutX="424.0" layoutY="363.0" mnemonicParsing="false" onAction="#Search" text="Search" />
+    <Text layoutX="540.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" />
+    <ComboBox fx:id="searchStatus" layoutX="587.0" layoutY="363.0" prefHeight="21.0" prefWidth="104.0" />
+    <Button layoutX="706.0" layoutY="363.0" mnemonicParsing="false" onAction="#Filter" text="Filter" />
+    <ComboBox fx:id="inStatus" layoutX="278.0" layoutY="200.0" prefHeight="33.0" prefWidth="193.0" />
     <Text layoutX="211.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" wrappingWidth="58.07666015625">
         <font>
           <Font size="15.0" />
@@ -126,22 +126,28 @@
           <Font size="15.0" />
         </font>
     </Text>
-    <TextField layoutX="626.0" layoutY="102.0" prefHeight="33.0" prefWidth="193.0" />
+    <TextField fx:id="inName" layoutX="626.0" layoutY="102.0" prefHeight="33.0" prefWidth="193.0" />
     <Text layoutX="565.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cost">
         <font>
           <Font size="15.0" />
         </font>
     </Text>
-    <TextField layoutX="626.0" layoutY="151.0" prefHeight="33.0" prefWidth="193.0" />
+    <TextField fx:id="inCost" layoutX="626.0" layoutY="151.0" prefHeight="33.0" prefWidth="193.0" />
     <Text layoutX="565.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount">
         <font>
           <Font size="15.0" />
         </font>
     </Text>
-    <TextField layoutX="626.0" layoutY="200.0" prefHeight="33.0" prefWidth="193.0" />
+    <TextField fx:id="inAmount" layoutX="626.0" layoutY="200.0" prefHeight="33.0" prefWidth="193.0" />
    <Label fx:id="titleFinancialOfficer" layoutX="84.0" layoutY="20.0" prefHeight="46.0" prefWidth="218.0" text="Accountant Name">
       <font>
          <Font size="14.0" />
       </font>
    </Label>
+   <Button layoutX="540.0" layoutY="260.0" mnemonicParsing="false" onAction="#Edit" prefHeight="35.0" prefWidth="104.0" text="Edit">
+      <font>
+         <Font size="13.0" />
+      </font>
+   </Button>
+   <Button layoutX="828.0" layoutY="363.0" mnemonicParsing="false" onAction="#Reset" text="Reset" />
 </AnchorPane>
