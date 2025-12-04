@@ -74,4 +74,8 @@ public class Fee implements Serializable {
     public void setMonthCovered(String monthCovered) {
         this.monthCovered = monthCovered;
     }
+
+    public String getFinancialOfficerName(){
+        return this.recordedBy.getName();
+    }
 }

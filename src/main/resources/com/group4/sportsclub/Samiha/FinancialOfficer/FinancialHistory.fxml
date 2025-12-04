@@ -85,37 +85,37 @@
           <Font size="16.0" />
         </font>
     </Text>
-    <TextField layoutX="257.0" layoutY="106.0" prefHeight="33.0" prefWidth="154.0" />
-    <Label layoutX="227.0" layoutY="196.0" prefHeight="21.0" prefWidth="176.0" text="Name">
+    <TextField fx:id="searchID" layoutX="257.0" layoutY="106.0" prefHeight="33.0" prefWidth="154.0" />
+    <Label fx:id="outName" layoutX="227.0" layoutY="196.0" prefHeight="21.0" prefWidth="144.0" text="Name">
         <font>
           <Font size="15.0" />
         </font>
     </Label>
     <Line endX="521.5" layoutX="302.0" layoutY="189.0" startX="-81.5" />
     <Line endX="-97.0" endY="50.0" layoutX="317.0" layoutY="188.0" startX="-97.0" startY="-27.0" />
-    <Button layoutX="436.0" layoutY="106.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="57.0" text="Search" />
-    <Label layoutX="438.0" layoutY="196.0" prefHeight="21.0" prefWidth="154.0" text="Mobile Number">
+    <Button layoutX="436.0" layoutY="106.0" mnemonicParsing="false" onAction="#search" prefHeight="33.0" prefWidth="57.0" text="Search" />
+    <Label fx:id="outMobileNumber" layoutX="400.0" layoutY="196.0" prefHeight="21.0" prefWidth="178.0" text="Mobile Number">
         <font>
           <Font size="15.0" />
         </font>
     </Label>
-    <Label layoutX="646.0" layoutY="196.0" prefHeight="21.0" prefWidth="164.0" text="NID Number">
+    <Label fx:id="outNIDNumber" layoutX="627.0" layoutY="196.0" prefHeight="21.0" prefWidth="164.0" text="NID Number">
         <font>
           <Font size="15.0" />
         </font>
     </Label>
-    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="221.0" layoutY="248.0" prefHeight="21.0" prefWidth="602.0" text="Message" textAlignment="CENTER" wrapText="true">
+    <Label fx:id="resultLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="221.0" layoutY="248.0" prefHeight="21.0" prefWidth="602.0" text="Message" textAlignment="CENTER" wrapText="true">
         <font>
           <Font size="15.0" />
         </font>
     </Label>
-    <TableView layoutX="215.0" layoutY="283.0" prefHeight="375.0" prefWidth="602.0">
+    <TableView fx:id="table" layoutX="215.0" layoutY="283.0" prefHeight="375.0" prefWidth="602.0">
       <columns>
-          <TableColumn prefWidth="124.0" text="Date" />
-          <TableColumn prefWidth="185.0" text="Month Covered" />
-          <TableColumn prefWidth="132.0" text="AmountPaid" />
-          <TableColumn prefWidth="133.0" text="Payment Method" />
-          <TableColumn prefWidth="127.0" text="Recorded By" />
+          <TableColumn fx:id="tableDate" prefWidth="124.0" text="Date" />
+          <TableColumn fx:id="tableMonth" prefWidth="185.0" text="Month Covered" />
+          <TableColumn fx:id="tableAmount" prefWidth="132.0" text="Amount Paid" />
+          <TableColumn fx:id="tableMethod" prefWidth="133.0" text="Payment Method" />
+          <TableColumn fx:id="tableRecordedBy" prefWidth="127.0" text="Recorded By" />
       </columns>
       <columnResizePolicy>
          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
