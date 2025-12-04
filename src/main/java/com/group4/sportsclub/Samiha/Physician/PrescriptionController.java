@@ -348,40 +348,6 @@ public class PrescriptionController
 
     }
 
-    @Deprecated
-    public void SwitchToCheckupPending(ActionEvent actionEvent) throws IOException {
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("CheckupPending.fxml"));
-        Parent root = loader.load();
-
-        CheckupPendingController checkupPendingController = loader.getController();
-        checkupPendingController.setP(this.p);
-        checkupPendingController.setTitlePhysician();
-
-        Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-
-    }
-
-    @Deprecated
-    public void SwitchToClearance(ActionEvent actionEvent) throws IOException {
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Clearance.fxml"));
-        Parent root = loader.load();
-
-        ClearanceController clearanceController = loader.getController();
-        clearanceController.setP(this.p);
-        clearanceController.setTitlePhysician();
-
-        Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-
-    }
-
     @javafx.fxml.FXML
     public void SwitchToDietPlan(ActionEvent actionEvent) throws IOException {
 
@@ -426,6 +392,7 @@ public class PrescriptionController
         PhysicianNotificationController physicianNotificationController = loader.getController();
         physicianNotificationController.setP(this.p);
         physicianNotificationController.setTitlePhysician();
+        physicianNotificationController.tableNotificationLoader();
 
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);

@@ -261,6 +261,7 @@ public class PhysicianDashboardController
         PhysicianNotificationController physicianNotificationController = loader.getController();
         physicianNotificationController.setP(this.p);
         physicianNotificationController.setTitlePhysician();
+        physicianNotificationController.tableNotificationLoader();
 
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
