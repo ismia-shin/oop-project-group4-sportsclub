@@ -10,7 +10,6 @@ import java.io.IOException;
 
 public class SceneSwitcher {
 
-
     public static void switchTo(ActionEvent event, String fxmlPath) {
         try {
             Parent root = FXMLLoader.load(SceneSwitcher.class.getResource(fxmlPath));
