@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
@@ -15,7 +16,7 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="693.0" prefWidth="918.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group4.sportsclub.Samiha.FinancialOfficer.DepartmentBudgetController">
-    <VBox layoutX="29.0" layoutY="107.0" prefHeight="575.0" prefWidth="164.0" spacing="20.0">
+    <VBox layoutX="29.0" layoutY="95.0" prefHeight="575.0" prefWidth="164.0" spacing="20.0">
         <Button mnemonicParsing="false" onAction="#SwitchToDashboard" prefHeight="51.0" prefWidth="164.0" text="🏠 Dashboard">
             <font>
                 <Font size="18.0" />
@@ -76,91 +77,50 @@
     <ImageView fitHeight="58.0" fitWidth="39.0" layoutX="29.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
         <Image url="@../../Images/Brother's_Union_Logo_noBG_noText.png" />
     </ImageView>
-    <TableView layoutX="221.0" layoutY="179.0" prefHeight="432.0" prefWidth="327.0">
+    <TableView fx:id="table" layoutX="221.0" layoutY="95.0" onMouseClicked="#onRowClicked" prefHeight="536.0" prefWidth="250.0">
         <columns>
-          <TableColumn prefWidth="82.0" text="Department" />
-         <TableColumn prefWidth="133.0" text="Proposing Manager" />
-          <TableColumn prefWidth="88.0" text="Amount" />
+          <TableColumn fx:id="tableDepartment" prefWidth="82.0" text="Department" />
+          <TableColumn fx:id="tableAmount" prefWidth="88.0" text="Amount" />
         </columns>
       <columnResizePolicy>
          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
       </columnResizePolicy>
     </TableView>
-    <Button layoutX="221.0" layoutY="107.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="152.0" text="Pending">
-        <font>
-          <Font size="20.0" />
-        </font>
-    </Button>
-    <Button layoutX="384.0" layoutY="107.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="164.0" text="Completed">
-        <font>
-          <Font size="20.0" />
-        </font>
-    </Button>
-    <Text layoutX="586.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Basic Information">
-        <font>
-          <Font name="System Bold" size="16.0" />
-        </font>
-    </Text>
-    <Label layoutX="586.0" layoutY="135.0" prefHeight="21.0" prefWidth="176.0" text="Department Name">
-        <font>
-          <Font size="15.0" />
-        </font>
-    </Label>
-    <Line endX="110.5" layoutX="661.0" layoutY="128.0" startX="-81.5" />
-    <Line endX="-97.0" endY="98.0" layoutX="676.0" layoutY="127.0" startX="-97.0" startY="-27.0" />
-    <Label layoutX="586.0" layoutY="166.0" prefHeight="21.0" prefWidth="176.0" text="Estimated Budget">
-        <font>
-          <Font size="15.0" />
-        </font>
-    </Label>
-    <Text layoutX="579.0" layoutY="511.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Statement">
+    <Text layoutX="485.0" layoutY="531.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Statement">
         <font>
           <Font size="18.0" />
         </font>
     </Text>
-    <TextField layoutX="579.0" layoutY="527.0" prefHeight="85.0" prefWidth="321.0" />
-    <CheckBox layoutX="581.0" layoutY="451.0" mnemonicParsing="false" text="Approved">
+    <TextField fx:id="inStatement" layoutX="482.0" layoutY="544.0" prefHeight="85.0" prefWidth="418.0" />
+    <CheckBox fx:id="inApproved" layoutX="485.0" layoutY="481.0" mnemonicParsing="false" onAction="#swapper" text="Approved">
         <font>
           <Font size="15.0" />
         </font>
     </CheckBox>
-    <CheckBox layoutX="700.0" layoutY="451.0" mnemonicParsing="false" text="Revision">
+    <CheckBox fx:id="inRevision" layoutX="653.0" layoutY="481.0" mnemonicParsing="false" onAction="#swapper" text="Revision">
         <font>
           <Font size="15.0" />
         </font>
     </CheckBox>
-    <Button layoutX="652.0" layoutY="628.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="176.0" text="Finalize Budget">
+    <Button layoutX="644.0" layoutY="641.0" mnemonicParsing="false" onAction="#Finalize" prefHeight="30.0" prefWidth="144.0" text="Finalize Budget">
         <font>
-          <Font size="19.0" />
+          <Font size="14.0" />
         </font>
     </Button>
-    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="221.0" layoutY="624.0" prefHeight="38.0" prefWidth="327.0" text="Message" textAlignment="CENTER" wrapText="true">
+    <Label fx:id="resultLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="221.0" layoutY="644.0" prefHeight="24.0" prefWidth="399.0" text="Message" textAlignment="CENTER" wrapText="true">
         <font>
           <Font size="15.0" />
         </font>
     </Label>
-    <CheckBox layoutX="816.0" layoutY="451.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="83.0" text="Denied">
+    <CheckBox fx:id="inDenied" layoutX="811.0" layoutY="481.0" mnemonicParsing="false" onAction="#swapper" prefHeight="21.0" prefWidth="83.0" text="Denied">
         <font>
           <Font size="15.0" />
         </font>
     </CheckBox>
-    <TableView layoutX="579.0" layoutY="258.0" prefHeight="177.0" prefWidth="313.0">
-      <columns>
-          <TableColumn prefWidth="75.0" text="Sector" />
-          <TableColumn prefWidth="74.0" text="Estimated Cost" />
-      </columns>
-        <columnResizePolicy>
-          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-        </columnResizePolicy>
-    </TableView>
-   <Label layoutX="588.0" layoutY="195.0" prefHeight="21.0" prefWidth="176.0" text="Proposing Manager">
-      <font>
-         <Font size="15.0" />
-      </font>
-   </Label>
    <Label fx:id="titleFinancialOfficer" layoutX="84.0" layoutY="20.0" prefHeight="46.0" prefWidth="218.0" text="Accountant Name">
       <font>
          <Font size="14.0" />
       </font>
    </Label>
+   <PieChart fx:id="picChart" layoutX="485.0" layoutY="101.0" prefHeight="366.0" prefWidth="418.0" />
 </AnchorPane>

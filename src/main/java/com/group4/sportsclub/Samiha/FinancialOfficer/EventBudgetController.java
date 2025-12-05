@@ -103,7 +103,7 @@ public class EventBudgetController
     }
 
     ArrayList<Expense> expenses = new ArrayList<>();
-    Double totalCost = null;
+    Double totalCost = 0.0;
 
     @javafx.fxml.FXML
     public void Add(ActionEvent actionEvent) {

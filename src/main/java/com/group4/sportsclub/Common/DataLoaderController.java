@@ -1,5 +1,6 @@
 package com.group4.sportsclub.Common;
 
+import com.group4.sportsclub.Samiha.FinancialOfficer.DepartmentBudget;
 import com.group4.sportsclub.Samiha.FinancialOfficer.EventBudget;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TextField;
@@ -22,7 +23,7 @@ public class DataLoaderController
     @javafx.fxml.FXML
     public void initialize() {
     }
-    ArrayList<EventBudget> eventBudget = new ArrayList<>();
+    ArrayList<DepartmentBudget> departmentBudgets = new ArrayList<>();
 
     @javafx.fxml.FXML
     public void loadData(ActionEvent actionEvent){
@@ -31,9 +32,9 @@ public class DataLoaderController
 
     @javafx.fxml.FXML
     public void saveData(ActionEvent actionEvent) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("data/Samiha/FinancialOfficer/eventBudget.bin"))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("data/Samiha/FinancialOfficer/departmentBudget.bin"))) {
 
-            oos.writeObject(new ArrayList<>(eventBudget));
+            oos.writeObject(new ArrayList<>(departmentBudgets));
 
             System.out.println("Data saved successfully");
 
