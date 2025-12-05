@@ -102,12 +102,11 @@
         <columns>
          <TableColumn fx:id="tableDDate" maxWidth="870.0" minWidth="30.0" prefWidth="87.0" text="Date" />
          <TableColumn fx:id="tableDPhysician" maxWidth="1290.0" minWidth="30.0" prefWidth="129.0" text="Physician" />
-          <TableColumn fx:id="tableDWeight" maxWidth="700.0" minWidth="30.0" prefWidth="70.0" text="Weight" />
-          <TableColumn fx:id="tableDBP" maxWidth="610.0" minWidth="30.0" prefWidth="61.0" text="BP" />
-         <TableColumn fx:id="tableDHeight" maxWidth="780.0" minWidth="30.0" prefWidth="78.0" text="Height" />
+          <TableColumn fx:id="tableDWeight" maxWidth="700.0" minWidth="30.0" prefWidth="96.0" text="Weight" />
+         <TableColumn fx:id="tableDHeight" maxWidth="780.0" minWidth="30.0" prefWidth="94.0" text="Height" />
          <TableColumn fx:id="tableDBMR" maxWidth="760.0" minWidth="30.0" prefWidth="76.0" text="BMR" />
-         <TableColumn fx:id="tableDBMI" maxWidth="830.0" minWidth="30.0" prefWidth="83.0" text="BMI" />
-         <TableColumn fx:id="tableDTotalCal" maxWidth="1120.0" minWidth="30.0" prefWidth="112.0" text="Total Cal" />
+         <TableColumn fx:id="tableDBMI" maxWidth="830.0" minWidth="30.0" prefWidth="93.0" text="BMI" />
+         <TableColumn fx:id="tableDTotalCal" maxWidth="1120.0" minWidth="30.0" prefWidth="121.0" text="Total Cal" />
         </columns>
     </TableView>
     <Button layoutX="427.0" layoutY="96.0" mnemonicParsing="false" text="Search" />
