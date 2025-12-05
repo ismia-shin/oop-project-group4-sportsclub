@@ -15,4 +15,52 @@ public class ClearanceRequest implements Serializable {
     protected String requestedActivity;
     protected LocalDate dateRequested;
 
+    public ClearanceRequest(Member member, String requestedActivity, LocalDate dateRequested) {
+        this.member = member;
+        this.requestedActivity = requestedActivity;
+        this.dateRequested = dateRequested;
+    }
+
+    public Member getMember() {
+        return member;
+    }
+
+    public void setMember(Member member) {
+        this.member = member;
+    }
+
+    public String getRequestedActivity() {
+        return requestedActivity;
+    }
+
+    public void setRequestedActivity(String requestedActivity) {
+        this.requestedActivity = requestedActivity;
+    }
+
+    public LocalDate getDateRequested() {
+        return dateRequested;
+    }
+
+    public void setDateRequested(LocalDate dateRequested) {
+        this.dateRequested = dateRequested;
+    }
+
+    @Override
+    public String toString() {
+        return "ClearanceRequest{" +
+                "member=" + member +
+                ", requestedActivity='" + requestedActivity + '\'' +
+                ", dateRequested=" + dateRequested +
+                '}';
+    }
+
+    public Integer getMemberId() {
+        return member.getId();
+    }
+
+    public String getMemberName() {
+        return member.getName();
+    }
+
+
 }

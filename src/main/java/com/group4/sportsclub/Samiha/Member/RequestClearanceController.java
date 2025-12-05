@@ -1,14 +1,20 @@
 package com.group4.sportsclub.Samiha.Member;
 
+import com.group4.sportsclub.Common.Notification;
+import com.group4.sportsclub.Samiha.Physician.ClearanceRequest;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class RequestClearanceController
 {
@@ -16,6 +22,10 @@ public class RequestClearanceController
     private Label titleMember;
 
     Member m;
+    @javafx.fxml.FXML
+    private DatePicker inDate;
+    @javafx.fxml.FXML
+    private TextField inActivity;
 
     public Member getM() {
         return m;
@@ -31,6 +41,9 @@ public class RequestClearanceController
 
     @javafx.fxml.FXML
     public void initialize() {
+
+        loadRequestData();
+
     }
 
     @javafx.fxml.FXML
@@ -100,5 +113,59 @@ public class RequestClearanceController
         stage.setScene(scene);
         stage.show();
 
+    }
+
+    ArrayList<ClearanceRequest> clearanceRequests = new ArrayList<>();
+
+    @SuppressWarnings("unchecked")
+    private void loadRequestData() {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("data/Samiha/Physician/clearanceRequest.bin"))) {
+
+            ArrayList<ClearanceRequest> savedList = (ArrayList<ClearanceRequest>) ois.readObject();
+
+            clearanceRequests.clear();
+            clearanceRequests.addAll(savedList);
+
+            System.out.println("Data loaded successfully from clearanceRequest.bin");
+
+        } catch (FileNotFoundException e) {
+            System.err.println("File not found, starting with empty list: " + e.getMessage());
+        } catch (Exception e) {
+            System.err.println("Error loading data: " + e.getMessage());
+
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void saveRequestData() {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("data/Samiha/Physician/clearanceRequest.bin"))) {
+
+            oos.writeObject(new ArrayList<>(clearanceRequests));
+
+            System.out.println("Data saved successfully to clearanceRequest.bin");
+
+        } catch (Exception e) {
+            System.err.println("Error saving data: " + e.getMessage());
+
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void Request(ActionEvent actionEvent) {
+
+        LocalDate date = inDate.getValue();
+        String activity = inActivity.getText();
+
+        if (date != null && !activity.trim().isEmpty() && m != null) {
+            ClearanceRequest newRequest = new ClearanceRequest(m, activity.trim(), date);
+            clearanceRequests.add(newRequest);
+            saveRequestData();
+
+            inDate.setValue(null);
+            inActivity.setText("");
+            System.out.println("Clearance Request submitted successfully for member " + m.getName() + ": " + newRequest);
+        } else {
+            System.out.println("Error: Please fill in all fields (Date and Activity) and ensure member data is set.");
+        }
     }
 }
