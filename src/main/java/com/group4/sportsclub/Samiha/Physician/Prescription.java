@@ -126,4 +126,20 @@ public class Prescription implements Serializable {
     public void setMedicationList(ArrayList<Medication> medicationList) {
         this.medicationList = medicationList;
     }
+
+    public String  getPhysicianName(){return this.physician.name;}
+
+    public String getMedicationListName(){
+
+        String medicineNames = "";
+
+        for (Medication i: this.medicationList){
+
+            medicineNames = medicineNames + " " + i.drugName;
+
+        }
+
+        return medicineNames;
+
+    }
 }

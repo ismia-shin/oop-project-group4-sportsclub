@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -16,7 +14,7 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="669.0" prefWidth="1316.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group4.sportsclub.Samiha.Physician.PhysicianHistoryController">
-    <VBox layoutX="27.0" layoutY="97.0" prefHeight="416.0" prefWidth="164.0" spacing="20.0">
+    <VBox layoutX="29.0" layoutY="96.0" prefHeight="416.0" prefWidth="164.0" spacing="20.0">
         <Button mnemonicParsing="false" onAction="#SwitchToDashboard" prefHeight="51.0" prefWidth="164.0" text="🏠 Dashboard">
             <font>
                 <Font size="18.0" />
@@ -44,7 +42,7 @@
         </Button>
     </VBox>
     <Line endX="1221.5" layoutX="104.0" layoutY="74.0" startX="-104.0" />
-    <Text layoutX="570.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View History">
+    <Text layoutX="623.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View History">
         <font>
           <Font size="25.0" />
         </font>
@@ -72,87 +70,75 @@
           <Font size="16.0" />
         </font>
     </Text>
-    <TextField layoutX="254.0" layoutY="96.0" prefHeight="25.0" prefWidth="154.0" />
-    <Label layoutX="227.0" layoutY="182.0" prefHeight="33.0" prefWidth="249.0" text="Name" wrapText="true">
+    <TextField fx:id="searchId" layoutX="254.0" layoutY="96.0" prefHeight="25.0" prefWidth="154.0" />
+    <Label fx:id="outName" layoutX="227.0" layoutY="182.0" prefHeight="33.0" prefWidth="249.0" text="Name" wrapText="true">
         <font>
           <Font size="15.0" />
         </font>
     </Label>
-    <Label layoutX="615.0" layoutY="182.0" prefHeight="33.0" prefWidth="146.0" text="Blood Group" wrapText="true">
+    <Label fx:id="outBloodGroup" layoutX="615.0" layoutY="182.0" prefHeight="33.0" prefWidth="146.0" text="Blood Group" wrapText="true">
         <font>
           <Font size="15.0" />
         </font>
     </Label>
-    <Label layoutX="877.0" layoutY="182.0" prefHeight="33.0" prefWidth="397.0" text="Allergies" wrapText="true">
+    <Label fx:id="outAllergies" layoutX="877.0" layoutY="182.0" prefHeight="33.0" prefWidth="397.0" text="Allergies" wrapText="true">
         <font>
           <Font size="15.0" />
         </font>
     </Label>
     <Line endX="981.5" layoutX="302.0" layoutY="175.0" startX="-81.5" />
     <Line endX="-97.0" endY="55.0" layoutX="317.0" layoutY="174.0" startX="-97.0" startY="-27.0" />
-    <TableView layoutX="219.0" layoutY="283.0" prefHeight="160.0" prefWidth="690.0">
+    <TableView fx:id="tableP" layoutX="219.0" layoutY="263.0" prefHeight="180.0" prefWidth="690.0">
       <columns>
-         <TableColumn prefWidth="84.0" text="Date" />
-         <TableColumn prefWidth="116.0" text="Physician" />
-         <TableColumn prefWidth="58.0" text="Temp" />
-          <TableColumn prefWidth="55.0" text="BP" />
-         <TableColumn prefWidth="174.0" text="Diagnosis" />
-         <TableColumn prefWidth="208.0" text="Medication" />
+         <TableColumn fx:id="tablePDate" maxWidth="840.0" minWidth="30.0" prefWidth="84.0" text="Date" />
+         <TableColumn fx:id="tablePPhysician" maxWidth="1160.0" minWidth="30.0" prefWidth="116.0" text="Physician" />
+         <TableColumn fx:id="tablePTemp" maxWidth="580.0" minWidth="30.0" prefWidth="58.0" text="Temp" />
+          <TableColumn fx:id="tablePBP" maxWidth="550.0" minWidth="30.0" prefWidth="55.0" text="BP" />
+         <TableColumn fx:id="tablePDiagnosis" maxWidth="1740.0" minWidth="30.0" prefWidth="174.0" text="Diagnosis" />
+         <TableColumn fx:id="tablePMedication" maxWidth="2080.0" minWidth="30.0" prefWidth="208.0" text="Medication" />
       </columns>
     </TableView>
-    <TableView layoutX="216.0" layoutY="494.0" prefHeight="160.0" prefWidth="697.0">
+    <TableView fx:id="tableD" layoutX="216.0" layoutY="462.0" prefHeight="192.0" prefWidth="697.0">
         <columns>
-         <TableColumn prefWidth="87.0" text="Date" />
-         <TableColumn prefWidth="129.0" text="Physician" />
-          <TableColumn prefWidth="70.0" text="Weight" />
-          <TableColumn prefWidth="61.0" text="BP" />
-         <TableColumn prefWidth="78.0" text="Height" />
-         <TableColumn prefWidth="76.0" text="BMR" />
-         <TableColumn prefWidth="83.0" text="BMI" />
-         <TableColumn prefWidth="112.0" text="Total Cal" />
+         <TableColumn fx:id="tableDDate" maxWidth="870.0" minWidth="30.0" prefWidth="87.0" text="Date" />
+         <TableColumn fx:id="tableDPhysician" maxWidth="1290.0" minWidth="30.0" prefWidth="129.0" text="Physician" />
+          <TableColumn fx:id="tableDWeight" maxWidth="700.0" minWidth="30.0" prefWidth="70.0" text="Weight" />
+          <TableColumn fx:id="tableDBP" maxWidth="610.0" minWidth="30.0" prefWidth="61.0" text="BP" />
+         <TableColumn fx:id="tableDHeight" maxWidth="780.0" minWidth="30.0" prefWidth="78.0" text="Height" />
+         <TableColumn fx:id="tableDBMR" maxWidth="760.0" minWidth="30.0" prefWidth="76.0" text="BMR" />
+         <TableColumn fx:id="tableDBMI" maxWidth="830.0" minWidth="30.0" prefWidth="83.0" text="BMI" />
+         <TableColumn fx:id="tableDTotalCal" maxWidth="1120.0" minWidth="30.0" prefWidth="112.0" text="Total Cal" />
         </columns>
     </TableView>
     <Button layoutX="427.0" layoutY="96.0" mnemonicParsing="false" text="Search" />
-    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="508.0" layoutY="99.0" prefHeight="17.0" prefWidth="644.0" text="Message" textAlignment="CENTER" />
-   <TableView layoutX="937.0" layoutY="278.0" prefHeight="151.0" prefWidth="361.0">
+    <Label fx:id="resultLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="524.0" layoutY="99.0" prefHeight="17.0" prefWidth="644.0" text="Message" textAlignment="CENTER" />
+   <TableView fx:id="tableM" layoutX="937.0" layoutY="283.0" prefHeight="160.0" prefWidth="361.0">
       <columns>
-         <TableColumn prefWidth="94.0" text="Name" />
-         <TableColumn prefWidth="83.0" text="Dose" />
-         <TableColumn prefWidth="85.0" text="Duration" />
-         <TableColumn prefWidth="98.0" text="Frequency" />
+         <TableColumn fx:id="tableMName" maxWidth="940.0" minWidth="30.0" prefWidth="94.0" text="Name" />
+         <TableColumn fx:id="tableMDose" maxWidth="830.0" minWidth="30.0" prefWidth="83.0" text="Dose" />
+         <TableColumn fx:id="tableMDuration" maxWidth="850.0" minWidth="30.0" prefWidth="85.0" text="Duration" />
+         <TableColumn fx:id="tableMFrequency" maxWidth="980.0" minWidth="30.0" prefWidth="98.0" text="Frequency" />
       </columns>
    </TableView>
-   <TableView layoutX="933.0" layoutY="505.0" prefHeight="145.0" prefWidth="368.0">
+   <TableView fx:id="tableF" layoutX="933.0" layoutY="496.0" prefHeight="160.0" prefWidth="369.0">
       <columns>
-         <TableColumn prefWidth="102.0" text="Type" />
-         <TableColumn prefWidth="66.0" text="Protein" />
-         <TableColumn prefWidth="58.0" text="Carbs" />
-         <TableColumn minWidth="0.0" prefWidth="51.0" text="Fat" />
-         <TableColumn prefWidth="90.0" text="Total Calories" />
+         <TableColumn fx:id="tableFType" maxWidth="1020.0" minWidth="30.0" prefWidth="102.0" text="Type" />
+         <TableColumn fx:id="tableFProtein" maxWidth="660.0" minWidth="30.0" prefWidth="66.0" text="Protein" />
+         <TableColumn fx:id="tableFCarb" maxWidth="580.0" minWidth="30.0" prefWidth="58.0" text="Carbs" />
+         <TableColumn fx:id="tableFFat" maxWidth="510.0" minWidth="30.0" prefWidth="51.0" text="Fat" />
+         <TableColumn fx:id="tableFTotalCalories" prefWidth="90.0" text="Total Calories" />
       </columns>
    </TableView>
-   <Text layoutX="937.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Prescribed Medication">
+   <Text layoutX="937.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Prescribed Medication">
       <font>
          <Font size="14.0" />
       </font>
    </Text>
-   <Text layoutX="933.0" layoutY="485.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Planned Diet">
+   <Text layoutX="937.0" layoutY="480.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Planned Diet">
       <font>
          <Font size="14.0" />
       </font>
    </Text>
-   <Text layoutX="587.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Physician" />
-   <ComboBox layoutX="645.0" layoutY="246.0" prefHeight="25.0" prefWidth="200.0" />
-   <Button layoutX="857.0" layoutY="246.0" mnemonicParsing="false" text="Search" />
-   <Text layoutX="589.0" layoutY="474.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Physician" />
-   <ComboBox layoutX="647.0" layoutY="457.0" prefHeight="25.0" prefWidth="200.0" />
-   <Button layoutX="859.0" layoutY="457.0" mnemonicParsing="false" text="Search" />
-   <DatePicker layoutX="285.0" layoutY="246.0" prefHeight="25.0" prefWidth="154.0" />
-   <Text layoutX="248.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
-   <Button layoutX="458.0" layoutY="246.0" mnemonicParsing="false" text="Filter" />
-   <DatePicker layoutX="285.0" layoutY="455.0" prefHeight="25.0" prefWidth="146.0" />
-   <Text layoutX="248.0" layoutY="472.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
-   <Button layoutX="450.0" layoutY="455.0" mnemonicParsing="false" text="Filter" />
    <Label fx:id="titlePhysician" layoutX="72.0" layoutY="14.0" prefHeight="51.0" prefWidth="289.0" text="Doctor's Name and Designation">
       <font>
          <Font size="14.0" />

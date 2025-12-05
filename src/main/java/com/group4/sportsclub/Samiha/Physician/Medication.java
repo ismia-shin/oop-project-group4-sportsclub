@@ -61,4 +61,6 @@ public class Medication implements Serializable {
     public void setDuration(String duration) {
         this.duration = duration;
     }
+
+
 }

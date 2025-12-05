@@ -135,4 +135,6 @@ public class MealPlan implements Serializable {
     public void setMealList(ArrayList<Meal> mealList) {
         this.mealList = mealList;
     }
+
+    public String getPhysicianName(){return physician.getName();}
 }
