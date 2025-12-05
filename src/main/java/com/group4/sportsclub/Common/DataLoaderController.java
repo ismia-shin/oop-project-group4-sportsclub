@@ -1,11 +1,6 @@
 package com.group4.sportsclub.Common;
 
-import com.group4.sportsclub.Samiha.FinancialOfficer.Asset;
-import com.group4.sportsclub.Samiha.FinancialOfficer.Fee;
-import com.group4.sportsclub.Samiha.FinancialOfficer.Payroll;
-import com.group4.sportsclub.Samiha.Member.Member;
-import com.group4.sportsclub.Samiha.Physician.Physician;
-import com.group4.sportsclub.Samiha.Physician.Reports;
+import com.group4.sportsclub.Samiha.FinancialOfficer.EventBudget;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TextField;
 
@@ -27,7 +22,7 @@ public class DataLoaderController
     @javafx.fxml.FXML
     public void initialize() {
     }
-    ArrayList<Payroll> payOrder = new ArrayList<>();
+    ArrayList<EventBudget> eventBudget = new ArrayList<>();
 
     @javafx.fxml.FXML
     public void loadData(ActionEvent actionEvent){
@@ -36,9 +31,9 @@ public class DataLoaderController
 
     @javafx.fxml.FXML
     public void saveData(ActionEvent actionEvent) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("data/Samiha/FinancialOfficer/Salary.bin"))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("data/Samiha/FinancialOfficer/eventBudget.bin"))) {
 
-            oos.writeObject(new ArrayList<>(payOrder));
+            oos.writeObject(new ArrayList<>(eventBudget));
 
             System.out.println("Data saved successfully");
 
