@@ -3,7 +3,6 @@ module com.group4.sportsclub {
     requires javafx.fxml;
     requires javafx.graphics;
     requires javafx.base;
-    requires com.group4.sportsclub;
     requires java.desktop;
 
 

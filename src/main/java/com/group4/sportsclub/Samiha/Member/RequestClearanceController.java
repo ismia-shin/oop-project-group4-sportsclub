@@ -168,4 +168,20 @@ public class RequestClearanceController
             System.out.println("Error: Please fill in all fields (Date and Activity) and ensure member data is set.");
         }
     }
+
+    @javafx.fxml.FXML
+    public void Logout(ActionEvent actionEvent) throws IOException {
+
+        final String LOGIN_FXML_PATH = "/com/group4/sportsclub/Common/MemberLoginPage.fxml";
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(LOGIN_FXML_PATH));
+        Parent root = loader.load();
+
+        Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
 }

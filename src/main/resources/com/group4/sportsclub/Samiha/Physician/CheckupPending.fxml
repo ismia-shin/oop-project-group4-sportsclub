@@ -68,7 +68,7 @@
           <Font size="14.0" />
         </font>
     </Button>
-    <Button layoutX="954.0" layoutY="22.0" mnemonicParsing="false" text="Log out">
+    <Button layoutX="954.0" layoutY="22.0" mnemonicParsing="false" onAction="#Logout" text="Log out">
         <font>
           <Font size="16.0" />
         </font>

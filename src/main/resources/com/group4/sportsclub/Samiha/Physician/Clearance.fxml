@@ -57,7 +57,7 @@
           <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
         </columnResizePolicy>
     </TableView>
-    <Button layoutX="883.0" layoutY="25.0" mnemonicParsing="false" text="Log out">
+    <Button layoutX="883.0" layoutY="25.0" mnemonicParsing="false" onAction="#Logout" text="Log out">
         <font>
           <Font size="16.0" />
         </font>

@@ -31,7 +31,7 @@
           <TableColumn fx:id="tableMessage" prefWidth="500.0" text="Message" />
         </columns>
     </TableView>
-    <Button layoutX="941.0" layoutY="21.0" mnemonicParsing="false" text="Log out">
+    <Button layoutX="941.0" layoutY="21.0" mnemonicParsing="false" onAction="#Logout" text="Log out">
         <font>
           <Font size="16.0" />
         </font>

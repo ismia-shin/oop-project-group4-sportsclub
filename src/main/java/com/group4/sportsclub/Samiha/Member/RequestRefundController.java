@@ -176,4 +176,19 @@ public class RequestRefundController
         inReason.clear();
         System.out.println("Refund request successfully submitted and saved.");
     }
+
+    @javafx.fxml.FXML
+    public void Logout(ActionEvent actionEvent) throws IOException {
+
+        final String LOGIN_FXML_PATH = "/com/group4/sportsclub/Common/MemberLoginPage.fxml";
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(LOGIN_FXML_PATH));
+        Parent root = loader.load();
+
+        Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }
