@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="450.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group4.sportsclub.Abid.OperationsManager.ManageEventRegistrationsController">
+
+    <!-- Goal Title -->
+    <Label layoutX="136.0" layoutY="20.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text=" Manage Event Registrations" />
+
+    <!-- Event Selection -->
+    <Label layoutX="20" layoutY="70" text="Select Event:" />
+    <ComboBox fx:id="eventComboBox" layoutX="120" layoutY="65" prefWidth="200" />
+
+    <!-- Participant Search -->
+    <Label layoutX="20" layoutY="110" text="Search Participant:" />
+    <TextField fx:id="searchField" layoutX="140" layoutY="105" prefWidth="180" />
+
+    <Button layoutX="330" layoutY="105" onAction="#onSearchParticipant" text="Search" />
+
+    <!-- Participant Table -->
+    <TableView fx:id="participantTable" layoutX="20" layoutY="150" prefHeight="180" prefWidth="610">
+        <columns>
+            <TableColumn fx:id="colName" prefWidth="150" text="Name" />
+            <TableColumn fx:id="colMemberID" prefWidth="100" text="Member ID" />
+            <TableColumn fx:id="colStatus" prefWidth="100" text="Status" />
+            <TableColumn fx:id="colPaid" prefWidth="80" text="Fee Paid" />
+            <TableColumn fx:id="colAction" prefWidth="150" text="Action" />
+        </columns>
+    </TableView>
+
+    <!-- Approval Options -->
+    <Label layoutX="20" layoutY="340" text="Approval:" />
+    <RadioButton fx:id="approveRadio" layoutX="90" layoutY="340" text="Approve" />
+    <RadioButton fx:id="rejectRadio" layoutX="170" layoutY="340" text="Reject" />
+
+    <Button layoutX="260" layoutY="340" onAction="#onApplyDecision" text="Apply" />
+
+    <!-- Notes -->
+    <Label layoutX="20" layoutY="380" text="Notes:" />
+    <TextArea fx:id="notesArea" layoutX="80" layoutY="375" prefHeight="50" prefWidth="300" />
+
+    <Button layoutX="400" layoutY="390" onAction="#onSaveNotes" text="Save Notes" />
+
+</AnchorPane>

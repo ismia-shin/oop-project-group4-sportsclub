@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="542.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group4.sportsclub.Abid.OperationsManager.ScheduleSportsActivitiesController">
+
+    <children>
+
+        <!-- Date Picker -->
+        <DatePicker fx:id="datePicker" layoutX="30.0" layoutY="82.0" prefWidth="200" />
+
+        <!-- Time Text Field -->
+        <TextField fx:id="timeField" layoutX="30.0" layoutY="126.0" prefWidth="200" promptText="Time (HH:MM)" />
+
+        <!-- Facility ComboBox -->
+        <ComboBox fx:id="facilityComboBox" layoutX="30.0" layoutY="173.0" prefWidth="200" promptText="Select Facility" />
+
+        <!-- Coach ComboBox -->
+        <ComboBox fx:id="coachComboBox" layoutX="30.0" layoutY="217.0" prefWidth="200" promptText="Select Coach" />
+
+        <!-- Validate Button -->
+        <Button fx:id="validateButton" layoutX="30.0" layoutY="264.0" prefWidth="120" text="Validate Slot" />
+
+        <!-- Save Button -->
+        <Button fx:id="saveButton" layoutX="170.0" layoutY="264.0" prefWidth="120" text="Save Schedule" />
+
+        <!-- Timetable Table -->
+        <TableView fx:id="timetableTable" layoutX="30.0" layoutY="317.0" prefHeight="200" prefWidth="690">
+
+            <columns>
+                <TableColumn fx:id="colDate" prefWidth="120" text="Date" />
+                <TableColumn fx:id="colTime" prefWidth="90" text="Time" />
+                <TableColumn fx:id="colFacility" prefWidth="150" text="Facility" />
+                <TableColumn fx:id="colCoach" prefWidth="150" text="Coach" />
+                <TableColumn fx:id="colStatus" prefWidth="100" text="Status" />
+            </columns>
+
+        </TableView>
+      <Label layoutX="164.0" layoutY="7.0" prefHeight="42.0" prefWidth="340.0" text="Schedule Daily Sports Activities">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+
+    </children>
+
+</AnchorPane>

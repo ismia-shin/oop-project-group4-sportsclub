@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="511.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group4.sportsclub.Abid.OperationsManager.InventoryandEquipmentStockController">
+
+    <!-- Goal Title -->
+    <Label layoutX="136.0" layoutY="24.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Manage Inventory &amp; Equipment Stock" />
+
+    <!-- Inventory Table -->
+    <TableView fx:id="inventoryTable" layoutX="20" layoutY="70" prefHeight="180" prefWidth="610">
+        <columns>
+            <TableColumn fx:id="colItem" prefWidth="150" text="Item" />
+            <TableColumn fx:id="colCurrentStock" prefWidth="120" text="Current Stock" />
+            <TableColumn fx:id="colReorderLevel" prefWidth="120" text="Reorder Level" />
+            <TableColumn fx:id="colSupplier" prefWidth="120" text="Supplier" />
+            <TableColumn fx:id="colStatus" prefWidth="100" text="Status" />
+        </columns>
+    </TableView>
+
+    <!-- Reorder Section -->
+    <Label layoutX="20" layoutY="270" text="Select Item:" />
+    <ComboBox fx:id="itemComboBox" layoutX="100" layoutY="265" prefWidth="180" promptText="Choose Item" />
+
+    <Label layoutX="300" layoutY="270" text="Reorder Qty:" />
+    <TextField fx:id="reorderQtyField" layoutX="390" layoutY="265" prefWidth="100" promptText="Quantity" />
+
+    <Button layoutX="510" layoutY="265" onAction="#onPlaceOrder" text="Place Order" />
+
+    <!-- Order Confirmation -->
+    <Label layoutX="20" layoutY="310" text="Order Confirmation:" />
+    <TextArea fx:id="orderConfirmationArea" editable="false" layoutX="20" layoutY="330" prefHeight="80" prefWidth="610" promptText="Order details and supplier info will appear here" />
+
+    <!-- Refresh Button -->
+    <Button layoutX="20.0" layoutY="435.0" onAction="#onRefreshInventory" prefWidth="150" text="Refresh Inventory" />
+
+</AnchorPane>

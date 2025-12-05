@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.group4.sportsclub.Abid.MembershipHolder.ViewClubAnnouncementsController"
+            prefHeight="450.0" prefWidth="650.0">
+
+    <!-- Page Title -->
+    <Label text="Goal 3: View Club Announcements"
+           layoutX="20" layoutY="15"
+           style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2A4D8F;" />
+
+    <!-- Announcements Table -->
+    <TableView fx:id="tblAnnouncements"
+               layoutX="20" layoutY="60"
+               prefWidth="610" prefHeight="180">
+
+        <columns>
+            <TableColumn fx:id="colTitle" text="Title" prefWidth="200" />
+            <TableColumn fx:id="colCategory" text="Category" prefWidth="120" />
+            <TableColumn fx:id="colDate" text="Date" prefWidth="120" />
+            <TableColumn fx:id="colStatus" text="Status" prefWidth="150" />
+        </columns>
+
+    </TableView>
+
+    <!-- Preview Selected Announcement -->
+    <Label text="Announcement Details:" layoutX="20" layoutY="250" />
+    <TextArea fx:id="txtAnnouncementDetails"
+              layoutX="20" layoutY="270"
+              prefWidth="610" prefHeight="100"
+              editable="false"
+              promptText="Select an announcement to view details..." />
+
+    <!-- Controls -->
+    <Button text="Refresh"
+            layoutX="20" layoutY="380"
+            prefWidth="120"
+            onAction="#handleRefresh" />
+
+    <Button text="Mark as Read"
+            layoutX="160" layoutY="380"
+            prefWidth="140"
+            onAction="#handleMarkAsRead" />
+
+    <Button text="Save for Later"
+            layoutX="320" layoutY="380"
+            prefWidth="140"
+            onAction="#handleSaveForLater" />
+
+</AnchorPane>

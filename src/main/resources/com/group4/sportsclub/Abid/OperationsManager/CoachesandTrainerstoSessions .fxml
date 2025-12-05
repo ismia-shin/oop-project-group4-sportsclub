@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="494.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group4.sportsclub.Abid.OperationsManager.CoachesandTrainerstoSessionsController">
+
+    <!-- Goal Title -->
+    <Label layoutX="143.0" layoutY="20.0" prefHeight="26.0" prefWidth="339.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Assign Coaches &amp; Trainers to Sessions" />
+
+    <!-- Sessions Table -->
+    <TableView fx:id="sessionsTable" layoutX="20" layoutY="70" prefHeight="180" prefWidth="610">
+        <columns>
+            <TableColumn fx:id="colSession" prefWidth="150" text="Session" />
+            <TableColumn fx:id="colSport" prefWidth="120" text="Sport" />
+            <TableColumn fx:id="colDate" prefWidth="100" text="Date" />
+            <TableColumn fx:id="colTime" prefWidth="100" text="Time" />
+            <TableColumn fx:id="colAssignedCoach" prefWidth="140" text="Assigned Coach" />
+        </columns>
+    </TableView>
+
+    <!-- Assignment Section -->
+    <Label layoutX="20" layoutY="270" text="Coach:" />
+    <ComboBox fx:id="coachComboBox" layoutX="80" layoutY="265" prefWidth="180" promptText="Select Coach" />
+
+    <Label layoutX="280" layoutY="270" text="Session:" />
+    <ComboBox fx:id="sessionComboBox" layoutX="340" layoutY="265" prefWidth="180" promptText="Select Session" />
+
+    <Button layoutX="530" layoutY="265" onAction="#onAssignCoach" text="Assign Coach" />
+
+    <!-- Status Display -->
+    <Label layoutX="20" layoutY="310" text="Assignment Result:" />
+    <TextArea fx:id="assignmentResultArea" editable="false" layoutX="20.0" layoutY="333.0" prefHeight="80" prefWidth="610" promptText="Coach assignment confirmation will appear here" />
+
+    <!-- Refresh Button -->
+    <Button layoutX="20.0" layoutY="434.0" onAction="#onRefreshSchedule" prefWidth="150" text="Refresh Schedule" />
+
+</AnchorPane>

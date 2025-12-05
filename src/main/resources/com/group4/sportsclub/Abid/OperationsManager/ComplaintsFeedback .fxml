@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="450.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group4.sportsclub.Abid.OperationsManager.ComplaintsFeedbackController">
+
+    <!-- Goal Title -->
+    <Label layoutX="119.0" layoutY="27.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text=" Review Member Complaints &amp; Feedback" />
+
+    <!-- Complaint Table -->
+    <TableView fx:id="complaintsTable" layoutX="20" layoutY="70" prefHeight="180" prefWidth="610">
+        <columns>
+            <TableColumn fx:id="colMember" prefWidth="120" text="Member" />
+            <TableColumn fx:id="colCategory" prefWidth="120" text="Category" />
+            <TableColumn fx:id="colUrgency" prefWidth="80" text="Urgency" />
+            <TableColumn fx:id="colDate" prefWidth="100" text="Date" />
+            <TableColumn fx:id="colStatus" prefWidth="120" text="Status" />
+        </columns>
+    </TableView>
+
+    <!-- Filters -->
+    <Label layoutX="20" layoutY="270" text="Category:" />
+    <ComboBox fx:id="categoryComboBox" layoutX="90" layoutY="265" prefWidth="150" />
+
+    <Label layoutX="260" layoutY="270" text="Urgency:" />
+    <ChoiceBox fx:id="urgencyChoiceBox" layoutX="320" layoutY="265" prefWidth="120" />
+
+    <Button layoutX="460" layoutY="265" onAction="#onFilterComplaints" text="Filter" />
+
+    <!-- Assign Resolution -->
+    <Label layoutX="20" layoutY="310" text="Assign To:" />
+    <TextField fx:id="assignField" layoutX="90" layoutY="305" prefWidth="150" />
+
+    <Label layoutX="260" layoutY="310" text="Deadline:" />
+    <DatePicker fx:id="deadlinePicker" layoutX="330" layoutY="305" prefWidth="140" />
+
+    <Button layoutX="480" layoutY="305" onAction="#onAssignResolution" text="Assign" />
+
+    <!-- Notes / Response Area -->
+    <Label layoutX="20" layoutY="350" text="Notes / Response:" />
+    <TextArea fx:id="responseArea" layoutX="130" layoutY="345" prefHeight="60" prefWidth="300" />
+
+    <Button layoutX="495.0" layoutY="405.0" onAction="#onUpdateStatus" text="Update Status" />
+
+</AnchorPane>

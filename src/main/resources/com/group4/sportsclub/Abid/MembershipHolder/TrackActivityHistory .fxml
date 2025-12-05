@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="506.0" prefWidth="745.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group4.sportsclub.Abid.MembershipHolder.TrackActivityHistoryController">
+
+    <!-- Title -->
+    <Label layoutX="27.0" layoutY="14.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Track Activity History" />
+
+    <!-- Filter Type -->
+    <Label layoutX="25.0" layoutY="70.0" text="Activity Type:" />
+    <ChoiceBox fx:id="activityTypeChoiceBox" layoutX="109.0" layoutY="66.0" prefHeight="26.0" prefWidth="186.0" />
+
+    <!-- Date From -->
+    <Label layoutX="25.0" layoutY="114.0" prefHeight="17.0" prefWidth="74.0" text="From:" />
+    <DatePicker fx:id="fromDatePicker" layoutX="109.0" layoutY="110.0" />
+
+    <!-- Date To -->
+    <Label layoutX="25.0" layoutY="153.0" prefHeight="17.0" prefWidth="53.0" text="To:" />
+    <DatePicker fx:id="toDatePicker" layoutX="109.0" layoutY="149.0" />
+
+    <!-- Apply Filter -->
+    <Button layoutX="27.0" layoutY="461.0" onAction="#onApplyFilter" prefHeight="26.0" prefWidth="98.0" text="Apply" />
+
+    <!-- Activity History Table -->
+    <TableView fx:id="activityHistoryTable" layoutX="25.0" layoutY="199.0" prefHeight="230" prefWidth="610">
+
+        <columns>
+            <TableColumn fx:id="colDate" prefWidth="150" text="Date" />
+            <TableColumn fx:id="colType" prefWidth="150" text="Type" />
+            <TableColumn fx:id="colDetails" prefWidth="300" text="Details" />
+        </columns>
+    </TableView>
+
+    <!-- Bottom Buttons -->
+    <Button layoutX="463.0" layoutY="461.0" onAction="#onPrintSummary" prefHeight="26.0" prefWidth="59.0" text="Print" />
+
+    <Button layoutX="558.0" layoutY="461.0" onAction="#onExportHistory" prefHeight="26.0" prefWidth="74.0" text="Export" />
+
+</AnchorPane>
