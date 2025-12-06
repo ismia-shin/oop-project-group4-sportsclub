@@ -19,7 +19,7 @@ public class AnalyzeEngagementController {
     @FXML private TableColumn<Metric, Integer> colReach, colClicks;
 
     private ObservableList<Metric> dataList = FXCollections.observableArrayList();
-    private final String FILE_NAME = "Marketing/engagement_metrics.bin";
+    private final String FILE_NAME = "Suzane/MarketingManager/engagement_metrics.bin";
 
     @FXML public void initialize() {
         colCampName.setCellValueFactory(new PropertyValueFactory<>("name"));

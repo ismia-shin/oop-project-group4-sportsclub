@@ -58,7 +58,7 @@ public class MainLayoutController {
 
     private void saveProfileImage(File sourceFile) {
         try {
-            File destDir = new File("data/ProfilePictures");
+            File destDir = new File("data/Suzane/ProfilePictures");
             if (!destDir.exists()) {
                 destDir.mkdirs();
             }

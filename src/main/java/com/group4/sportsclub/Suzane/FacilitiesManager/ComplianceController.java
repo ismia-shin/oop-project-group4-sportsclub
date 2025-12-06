@@ -17,7 +17,7 @@ public class ComplianceController {
     @FXML private DatePicker newExpiryPicker;
 
     private ObservableList<Certificate> certs = FXCollections.observableArrayList();
-    private final String FILE_NAME = "Facilities/compliance_certs.bin";
+    private final String FILE_NAME = "Suzane/FacilitiesManager/compliance_certs.bin";
 
     @FXML public void initialize() {
         colCertName.setCellValueFactory(new PropertyValueFactory<>("name"));

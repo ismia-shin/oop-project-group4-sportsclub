@@ -15,7 +15,7 @@ public class IssueReportingController {
     @FXML private TextArea resolutionArea;
 
     private ObservableList<Issue> issueList = FXCollections.observableArrayList();
-    private final String FILE_NAME = "Facilities/issues.bin";
+    private final String FILE_NAME = "Suzane/FacilitiesManager/issues.bin";
 
     @FXML public void initialize() {
         colID.setCellValueFactory(new PropertyValueFactory<>("id"));

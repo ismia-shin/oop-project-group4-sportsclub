@@ -13,7 +13,7 @@ public class PitchMaintenanceController {
     @FXML private TextArea instructionArea;
 
     private ObservableList<String> tasks = FXCollections.observableArrayList();
-    private final String FILE_NAME = "Facilities/maintenance_tasks.bin";
+    private final String FILE_NAME = "Suzane/FacilitiesManager/maintenance_tasks.bin";
 
     @FXML public void initialize() {
         tasks.addAll(DataHandler.loadData(FILE_NAME));

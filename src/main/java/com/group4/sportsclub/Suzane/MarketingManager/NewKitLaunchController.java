@@ -21,7 +21,7 @@ public class NewKitLaunchController {
     @FXML private TableColumn<CampaignModel, LocalDate> colDate;
 
     private ObservableList<CampaignModel> campaignList = FXCollections.observableArrayList();
-    private final String FILE_NAME = "Marketing/campaigns.bin";
+    private final String FILE_NAME = "Suzane/MarketingManager/campaigns.bin";
 
     @FXML public void initialize() {
         platformComboBox.getItems().addAll("Facebook", "Instagram", "Twitter");

@@ -16,7 +16,7 @@ public class NewsletterController {
     // We use a simple list to store history, though not displayed in a table in the basic UI,
     // we save it so the logic is complete.
     private ObservableList<NewsLog> history = FXCollections.observableArrayList();
-    private final String FILE_NAME = "Marketing/newsletter_history.bin";
+    private final String FILE_NAME = "Suzane/MarketingManager/newsletter_history.bin";
 
     @FXML public void initialize() {
         distCombo.getItems().addAll("All Members", "Subscribers", "Board Members");

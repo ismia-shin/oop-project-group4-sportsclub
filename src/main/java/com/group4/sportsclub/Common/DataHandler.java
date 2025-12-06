@@ -23,7 +23,7 @@ public class DataHandler {
     }
 
 
-    @SuppressWarnings("unchecked")
+
     public static <T> List<T> loadData(String fileName) {
         List<T> dataList = new ArrayList<>();
         File file = new File("data/" + fileName);

@@ -14,7 +14,7 @@ public class CleanupController {
     @FXML private CheckBox checkStandA, checkStandB, checkField, checkRestrooms, checkParking;
 
     private ObservableList<CleanupLog> cleanupLogs = FXCollections.observableArrayList();
-    private final String FILE_NAME = "Facilities/cleanup_logs.bin";
+    private final String FILE_NAME = "Suzane/FacilitiesManager/cleanup_logs.bin";
 
     @FXML public void initialize() {
         cleanupLogs.addAll(DataHandler.loadData(FILE_NAME));

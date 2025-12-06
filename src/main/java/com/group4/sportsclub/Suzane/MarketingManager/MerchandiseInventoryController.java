@@ -16,7 +16,7 @@ public class MerchandiseInventoryController {
     @FXML private Label totalItemsLabel, lowStockLabel;
 
     private ObservableList<MerchItem> inventory = FXCollections.observableArrayList();
-    private final String FILE_NAME = "Marketing/merchandise.bin";
+    private final String FILE_NAME = "Suzane/MarketingManager/merchandise.bin";
 
     @FXML public void initialize() {
         colItemName.setCellValueFactory(new PropertyValueFactory<>("name"));

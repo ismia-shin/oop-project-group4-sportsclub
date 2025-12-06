@@ -15,7 +15,7 @@ public class SecurityStaffingController {
     @FXML private TableColumn<RosterEntry, String> colZone, colCount, colShift, colStatus;
 
     private ObservableList<RosterEntry> roster = FXCollections.observableArrayList();
-    private final String FILE_NAME = "Facilities/security_roster.bin";
+    private final String FILE_NAME = "Suzane/FacilitiesManager/security_roster.bin";
 
     @FXML public void initialize() {
         zoneCombo.getItems().addAll("Gate 1", "VIP Stand", "Player Tunnel");

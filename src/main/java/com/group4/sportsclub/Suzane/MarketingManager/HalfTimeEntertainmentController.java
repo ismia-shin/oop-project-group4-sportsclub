@@ -17,7 +17,7 @@ public class HalfTimeEntertainmentController {
     @FXML private TableColumn<Act, String> colMatch, colAct, colStatus;
 
     private ObservableList<Act> acts = FXCollections.observableArrayList();
-    private final String FILE_NAME = "Marketing/entertainment.bin";
+    private final String FILE_NAME = "Suzane/MarketingManager/entertainment.bin";
 
     @FXML public void initialize() {
         matchListView.getItems().addAll("Vs Abahani (12 Dec)", "Vs Mohammedan (18 Dec)", "Vs Sheikh Russel (25 Dec)");

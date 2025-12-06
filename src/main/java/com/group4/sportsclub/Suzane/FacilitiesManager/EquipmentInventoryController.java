@@ -15,7 +15,7 @@ public class EquipmentInventoryController {
     @FXML private PieChart inventoryChart;
 
     private ObservableList<EquipmentItem> equipment = FXCollections.observableArrayList();
-    private final String FILE_NAME = "Facilities/equipment.bin";
+    private final String FILE_NAME = "Suzane/FacilitiesManager/equipment.bin";
 
     @FXML public void initialize() {
         conditionCombo.getItems().addAll("Good", "Needs Repair", "Discarded");

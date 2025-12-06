@@ -16,7 +16,7 @@ public class HospitalitySuitesController {
     @FXML private TableColumn<Suite, Integer> colCapacity;
 
     private ObservableList<Suite> suites = FXCollections.observableArrayList();
-    private final String FILE_NAME = "Facilities/suites.bin";
+    private final String FILE_NAME = "Suzane/FacilitiesManager/suites.bin";
 
     @FXML public void initialize() {
         suiteCombo.getItems().addAll("Suite 101", "Suite 102", "Suite 201");

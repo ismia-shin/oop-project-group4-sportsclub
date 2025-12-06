@@ -15,7 +15,7 @@ public class SocialSentimentController {
     @FXML private PieChart sentimentPieChart;
 
     private ObservableList<String> mentions = FXCollections.observableArrayList();
-    private final String FILE_NAME = "Marketing/mentions.bin";
+    private final String FILE_NAME = "Suzane/MarketingManager/mentions.bin";
 
     @FXML public void initialize() {
         mentions.addAll(DataHandler.loadData(FILE_NAME));

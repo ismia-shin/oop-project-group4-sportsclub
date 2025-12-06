@@ -17,7 +17,7 @@ public class SeasonTicketRenewalController {
     @FXML private TableColumn<Log, LocalDate> colDate;
 
     private ObservableList<Log> logs = FXCollections.observableArrayList();
-    private final String FILE_NAME = "Marketing/ticket_renewal_logs.bin";
+    private final String FILE_NAME = "Suzane/MarketingManager/ticket_renewal_logs.bin";
 
     @FXML public void initialize() {
         segmentCombo.getItems().addAll("VIP Members", "Regular Members", "Lapsed Members");

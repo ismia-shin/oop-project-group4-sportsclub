@@ -14,7 +14,7 @@ public class SponsorPartnershipController {
     @FXML private TableColumn<Sponsor, String> colName, colValue, colStatus;
 
     private ObservableList<Sponsor> sponsors = FXCollections.observableArrayList();
-    private final String FILE_NAME = "Marketing/sponsors.bin";
+    private final String FILE_NAME = "Suzane/MarketingManager/sponsors.bin";
 
     @FXML public void initialize() {
         colName.setCellValueFactory(new PropertyValueFactory<>("name"));

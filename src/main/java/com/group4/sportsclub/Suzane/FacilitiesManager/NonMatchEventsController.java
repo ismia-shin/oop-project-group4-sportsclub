@@ -18,7 +18,7 @@ public class NonMatchEventsController {
     @FXML private TableColumn<ExternalEvent, LocalDate> colDate;
 
     private ObservableList<ExternalEvent> events = FXCollections.observableArrayList();
-    private final String FILE_NAME = "Facilities/non_match_events.bin";
+    private final String FILE_NAME = "Suzane/FacilitiesManager/non_match_events.bin";
 
     @FXML public void initialize() {
         colEvent.setCellValueFactory(new PropertyValueFactory<>("name"));
